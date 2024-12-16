@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "481270311970",
+    "project_id": "luz-da-vida-iym9jw",
+    "storage_bucket": "luz-da-vida-iym9jw.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:481270311970:android:80d6676da7f73806b02e7b",
+        "android_client_info": {
+          "package_name": "com.evo.luzdavida"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD4jxHvxn266264APygCHzn7tE0tNS8FVI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:481270311970:android:ce7ff67b8c2bc8f0b02e7b",
+        "android_client_info": {
+          "package_name": "com.evo.luzdavida2"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD4jxHvxn266264APygCHzn7tE0tNS8FVI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
