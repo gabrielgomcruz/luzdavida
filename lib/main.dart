@@ -13,6 +13,7 @@ import 'flutter_flow/flutter_flow_util.dart';
 import 'flutter_flow/internationalization.dart';
 import 'package:floating_bottom_navigation_bar/floating_bottom_navigation_bar.dart';
 import 'index.dart';
+import 'package:flutter_meta_sdk/flutter_meta_sdk.dart'
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
