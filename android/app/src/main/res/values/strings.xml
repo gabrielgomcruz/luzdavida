@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <resources>
     <string name="app_name">Luz da vida cuidadores</string>
-
+   <string name="facebook_app_id">1588991715041865</string>
+   <string name="fb_login_protocol_scheme">fb1588991715041865</string>
+   <string name="facebook_client_token">a659914846452a10f23dac854ff0a499</string> 
 </resources>
