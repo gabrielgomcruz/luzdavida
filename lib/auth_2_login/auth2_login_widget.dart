@@ -3,6 +3,7 @@ import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'auth2_login_model.dart';
@@ -10,6 +11,9 @@ export 'auth2_login_model.dart';
 
 class Auth2LoginWidget extends StatefulWidget {
   const Auth2LoginWidget({super.key});
+
+  static String routeName = 'auth_2_Login';
+  static String routePath = '/auth2Login';
 
   @override
   State<Auth2LoginWidget> createState() => _Auth2LoginWidgetState();
@@ -50,22 +54,22 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 300.0.ms,
-            begin: const Offset(0.0, 140.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 140.0),
+            end: Offset(0.0, 0.0),
           ),
           ScaleEffect(
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 300.0.ms,
-            begin: const Offset(0.9, 0.9),
-            end: const Offset(1.0, 1.0),
+            begin: Offset(0.9, 0.9),
+            end: Offset(1.0, 1.0),
           ),
           TiltEffect(
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 300.0.ms,
-            begin: const Offset(-0.349, 0),
-            end: const Offset(0, 0),
+            begin: Offset(-0.349, 0),
+            end: Offset(0, 0),
           ),
         ],
       ),
@@ -107,14 +111,14 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 33.0, 0.0, 15.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 33.0, 0.0, 15.0),
                   child: Container(
                     width: 381.0,
                     height: 237.0,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(16.0),
                     ),
-                    alignment: const AlignmentDirectional(0.0, 0.0),
+                    alignment: AlignmentDirectional(0.0, 0.0),
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(8.0),
                       child: Image.asset(
@@ -126,7 +130,7 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                 ),
                 Padding(
                   padding:
-                      const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
+                      EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
                   child: Material(
                     color: Colors.transparent,
                     elevation: 7.0,
@@ -135,12 +139,12 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                     ),
                     child: Container(
                       width: double.infinity,
-                      constraints: const BoxConstraints(
+                      constraints: BoxConstraints(
                         maxWidth: 570.0,
                       ),
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.of(context).secondaryBackground,
-                        boxShadow: const [
+                        boxShadow: [
                           BoxShadow(
                             blurRadius: 4.0,
                             color: Color(0x33000000),
@@ -154,9 +158,9 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                         borderRadius: BorderRadius.circular(12.0),
                       ),
                       child: Align(
-                        alignment: const AlignmentDirectional(0.0, 0.0),
+                        alignment: AlignmentDirectional(0.0, 0.0),
                         child: Padding(
-                          padding: const EdgeInsets.all(32.0),
+                          padding: EdgeInsets.all(32.0),
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -172,7 +176,7 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                                     ),
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 8.0, 0.0, 24.0),
                                 child: Text(
                                   'Preencha as informações abaixo para acessar sua conta.',
@@ -186,16 +190,16 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                                 ),
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 13.0),
-                                child: SizedBox(
+                                child: Container(
                                   width: double.infinity,
                                   child: TextFormField(
                                     controller:
                                         _model.emailAddressTextController,
                                     focusNode: _model.emailAddressFocusNode,
                                     autofocus: false,
-                                    autofillHints: const [AutofillHints.email],
+                                    autofillHints: [AutofillHints.email],
                                     obscureText: false,
                                     decoration: InputDecoration(
                                       labelText: 'Email',
@@ -261,15 +265,15 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                                 ),
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 16.0),
-                                child: SizedBox(
+                                child: Container(
                                   width: double.infinity,
                                   child: TextFormField(
                                     controller: _model.passwordTextController,
                                     focusNode: _model.passwordFocusNode,
                                     autofocus: false,
-                                    autofillHints: const [AutofillHints.email],
+                                    autofillHints: [AutofillHints.email],
                                     obscureText: !_model.passwordVisibility,
                                     decoration: InputDecoration(
                                       labelText: 'Senha',
@@ -329,7 +333,7 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                                           _model.passwordVisibility
                                               ? Icons.visibility_outlined
                                               : Icons.visibility_off_outlined,
-                                          color: const Color(0xFF757575),
+                                          color: Color(0xFF757575),
                                           size: 22.0,
                                         ),
                                       ),
@@ -350,7 +354,7 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                                 ),
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 16.0),
                                 child: FFButtonWidget(
                                   onPressed: () async {
@@ -367,15 +371,16 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                                     }
 
                                     context.goNamedAuth(
-                                        'ProfileVendedor', context.mounted);
+                                        ProfileVendedorWidget.routeName,
+                                        context.mounted);
                                   },
                                   text: 'Entrar',
                                   options: FFButtonOptions(
                                     width: double.infinity,
                                     height: 53.0,
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
-                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
                                     color: FlutterFlowTheme.of(context).primary,
                                     textStyle: FlutterFlowTheme.of(context)
@@ -386,7 +391,7 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                                           letterSpacing: 0.0,
                                         ),
                                     elevation: 3.0,
-                                    borderSide: const BorderSide(
+                                    borderSide: BorderSide(
                                       color: Colors.transparent,
                                       width: 1.0,
                                     ),
@@ -395,19 +400,20 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                                 ),
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 16.0),
                                 child: FFButtonWidget(
                                   onPressed: () async {
-                                    context.pushNamed('auth_2_ForgotPassword');
+                                    context.pushNamed(
+                                        Auth2ForgotPasswordWidget.routeName);
                                   },
                                   text: 'Esqueci minha senha',
                                   options: FFButtonOptions(
                                     width: double.infinity,
                                     height: 49.0,
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
-                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
                                     color: FlutterFlowTheme.of(context)
                                         .inputBackground,
@@ -415,12 +421,12 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                                         .titleSmall
                                         .override(
                                           fontFamily: 'Inter Tight',
-                                          color: const Color(0xD012151C),
+                                          color: Color(0xD012151C),
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.normal,
                                         ),
                                     elevation: 1.0,
-                                    borderSide: const BorderSide(
+                                    borderSide: BorderSide(
                                       color: Color(0x5F5A5C60),
                                       width: 1.0,
                                     ),
@@ -433,9 +439,9 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
 
                               // You will have to add an action on this rich text to go to your login page.
                               Align(
-                                alignment: const AlignmentDirectional(0.0, 0.0),
+                                alignment: AlignmentDirectional(0.0, 0.0),
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 12.0, 0.0, 12.0),
                                   child: InkWell(
                                     splashColor: Colors.transparent,
@@ -444,9 +450,9 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                                     highlightColor: Colors.transparent,
                                     onTap: () async {
                                       context.pushNamed(
-                                        'auth_2_Cadastrar',
+                                        Auth2CadastrarWidget.routeName,
                                         extra: <String, dynamic>{
-                                          kTransitionInfoKey: const TransitionInfo(
+                                          kTransitionInfoKey: TransitionInfo(
                                             hasTransition: true,
                                             transitionType:
                                                 PageTransitionType.fade,
@@ -461,7 +467,7 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                                           MediaQuery.of(context).textScaler,
                                       text: TextSpan(
                                         children: [
-                                          const TextSpan(
+                                          TextSpan(
                                             text: 'Não possui cadastro? ',
                                             style: TextStyle(),
                                           ),

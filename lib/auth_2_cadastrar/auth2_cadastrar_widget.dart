@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'auth2_cadastrar_model.dart';
@@ -11,6 +12,9 @@ export 'auth2_cadastrar_model.dart';
 
 class Auth2CadastrarWidget extends StatefulWidget {
   const Auth2CadastrarWidget({super.key});
+
+  static String routeName = 'auth_2_Cadastrar';
+  static String routePath = '/auth2Cadastrar';
 
   @override
   State<Auth2CadastrarWidget> createState() => _Auth2CadastrarWidgetState();
@@ -57,22 +61,22 @@ class _Auth2CadastrarWidgetState extends State<Auth2CadastrarWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 300.0.ms,
-            begin: const Offset(0.0, -140.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, -140.0),
+            end: Offset(0.0, 0.0),
           ),
           ScaleEffect(
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 300.0.ms,
-            begin: const Offset(0.9, 0.9),
-            end: const Offset(1.0, 1.0),
+            begin: Offset(0.9, 0.9),
+            end: Offset(1.0, 1.0),
           ),
           TiltEffect(
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 300.0.ms,
-            begin: const Offset(0.349, 0),
-            end: const Offset(0, 0),
+            begin: Offset(0.349, 0),
+            end: Offset(0, 0),
           ),
         ],
       ),
@@ -113,13 +117,13 @@ class _Auth2CadastrarWidgetState extends State<Auth2CadastrarWidget>
             children: [
               Expanded(
                 child: Padding(
-                  padding: const EdgeInsets.all(24.0),
+                  padding: EdgeInsets.all(24.0),
                   child: Container(
                     width: double.infinity,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(16.0),
                     ),
-                    alignment: const AlignmentDirectional(0.0, 0.0),
+                    alignment: AlignmentDirectional(0.0, 0.0),
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(8.0),
                       child: Image.asset(
@@ -133,7 +137,7 @@ class _Auth2CadastrarWidgetState extends State<Auth2CadastrarWidget>
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.all(16.0),
+                padding: EdgeInsets.all(16.0),
                 child: Material(
                   color: Colors.transparent,
                   elevation: 7.0,
@@ -142,12 +146,12 @@ class _Auth2CadastrarWidgetState extends State<Auth2CadastrarWidget>
                   ),
                   child: Container(
                     width: double.infinity,
-                    constraints: const BoxConstraints(
+                    constraints: BoxConstraints(
                       maxWidth: 570.0,
                     ),
                     decoration: BoxDecoration(
                       color: FlutterFlowTheme.of(context).primaryBackground,
-                      boxShadow: const [
+                      boxShadow: [
                         BoxShadow(
                           blurRadius: 4.0,
                           color: Color(0x33000000),
@@ -161,9 +165,9 @@ class _Auth2CadastrarWidgetState extends State<Auth2CadastrarWidget>
                       borderRadius: BorderRadius.circular(16.0),
                     ),
                     child: Align(
-                      alignment: const AlignmentDirectional(0.0, 0.0),
+                      alignment: AlignmentDirectional(0.0, 0.0),
                       child: Padding(
-                        padding: const EdgeInsets.all(32.0),
+                        padding: EdgeInsets.all(32.0),
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -179,7 +183,7 @@ class _Auth2CadastrarWidgetState extends State<Auth2CadastrarWidget>
                                   ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 8.0, 0.0, 24.0),
                               child: Text(
                                 'Crie sua conta com o formulário abaixo.',
@@ -193,9 +197,9 @@ class _Auth2CadastrarWidgetState extends State<Auth2CadastrarWidget>
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 13.0),
-                              child: SizedBox(
+                              child: Container(
                                 width: double.infinity,
                                 child: TextFormField(
                                   controller: _model.nomeCompletoTextController,
@@ -262,15 +266,15 @@ class _Auth2CadastrarWidgetState extends State<Auth2CadastrarWidget>
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 13.0),
-                              child: SizedBox(
+                              child: Container(
                                 width: double.infinity,
                                 child: TextFormField(
                                   controller: _model.emailAddressTextController,
                                   focusNode: _model.emailAddressFocusNode,
                                   autofocus: false,
-                                  autofillHints: const [AutofillHints.email],
+                                  autofillHints: [AutofillHints.email],
                                   obscureText: false,
                                   decoration: InputDecoration(
                                     labelText: 'Email',
@@ -332,15 +336,15 @@ class _Auth2CadastrarWidgetState extends State<Auth2CadastrarWidget>
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 13.0),
-                              child: SizedBox(
+                              child: Container(
                                 width: double.infinity,
                                 child: TextFormField(
                                   controller: _model.passwordTextController,
                                   focusNode: _model.passwordFocusNode,
                                   autofocus: false,
-                                  autofillHints: const [AutofillHints.password],
+                                  autofillHints: [AutofillHints.password],
                                   obscureText: !_model.passwordVisibility,
                                   decoration: InputDecoration(
                                     labelText: 'Senha',
@@ -395,7 +399,7 @@ class _Auth2CadastrarWidgetState extends State<Auth2CadastrarWidget>
                                         _model.passwordVisibility
                                             ? Icons.visibility_outlined
                                             : Icons.visibility_off_outlined,
-                                        color: const Color(0xFF757575),
+                                        color: Color(0xFF757575),
                                         size: 22.0,
                                       ),
                                     ),
@@ -416,16 +420,16 @@ class _Auth2CadastrarWidgetState extends State<Auth2CadastrarWidget>
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 13.0),
-                              child: SizedBox(
+                              child: Container(
                                 width: double.infinity,
                                 child: TextFormField(
                                   controller:
                                       _model.confirmPasswordTextController,
                                   focusNode: _model.confirmPasswordFocusNode,
                                   autofocus: false,
-                                  autofillHints: const [AutofillHints.password],
+                                  autofillHints: [AutofillHints.password],
                                   obscureText:
                                       !_model.confirmPasswordVisibility,
                                   decoration: InputDecoration(
@@ -481,7 +485,7 @@ class _Auth2CadastrarWidgetState extends State<Auth2CadastrarWidget>
                                         _model.confirmPasswordVisibility
                                             ? Icons.visibility_outlined
                                             : Icons.visibility_off_outlined,
-                                        color: const Color(0xFF757575),
+                                        color: Color(0xFF757575),
                                         size: 22.0,
                                       ),
                                     ),
@@ -502,7 +506,7 @@ class _Auth2CadastrarWidgetState extends State<Auth2CadastrarWidget>
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 5.0, 0.0, 16.0),
                               child: FFButtonWidget(
                                 onPressed: () async {
@@ -511,7 +515,7 @@ class _Auth2CadastrarWidgetState extends State<Auth2CadastrarWidget>
                                       _model
                                           .confirmPasswordTextController.text) {
                                     ScaffoldMessenger.of(context).showSnackBar(
-                                      const SnackBar(
+                                      SnackBar(
                                         content: Text(
                                           'Ih, as senhas que você digitou não estão iguais.',
                                         ),
@@ -541,7 +545,8 @@ class _Auth2CadastrarWidgetState extends State<Auth2CadastrarWidget>
                                             getCurrentTimestamp,
                                       ));
 
-                                  context.goNamedAuth('EuSou', context.mounted);
+                                  context.goNamedAuth(
+                                      EuSouWidget.routeName, context.mounted);
 
                                   FFAppState().addToPlanos(PlanosStruct(
                                     nomedoplano: 'Mensal',
@@ -560,9 +565,9 @@ class _Auth2CadastrarWidgetState extends State<Auth2CadastrarWidget>
                                 options: FFButtonOptions(
                                   width: double.infinity,
                                   height: 49.0,
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
-                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
                                   color: FlutterFlowTheme.of(context).primary,
                                   textStyle: FlutterFlowTheme.of(context)
@@ -573,7 +578,7 @@ class _Auth2CadastrarWidgetState extends State<Auth2CadastrarWidget>
                                         letterSpacing: 0.0,
                                       ),
                                   elevation: 3.0,
-                                  borderSide: const BorderSide(
+                                  borderSide: BorderSide(
                                     color: Colors.transparent,
                                     width: 1.0,
                                   ),
@@ -584,9 +589,9 @@ class _Auth2CadastrarWidgetState extends State<Auth2CadastrarWidget>
 
                             // You will have to add an action on this rich text to go to your login page.
                             Align(
-                              alignment: const AlignmentDirectional(0.0, 0.0),
+                              alignment: AlignmentDirectional(0.0, 0.0),
                               child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 12.0, 0.0, 12.0),
                                 child: InkWell(
                                   splashColor: Colors.transparent,
@@ -595,9 +600,9 @@ class _Auth2CadastrarWidgetState extends State<Auth2CadastrarWidget>
                                   highlightColor: Colors.transparent,
                                   onTap: () async {
                                     context.pushNamed(
-                                      'auth_2_Login',
+                                      Auth2LoginWidget.routeName,
                                       extra: <String, dynamic>{
-                                        kTransitionInfoKey: const TransitionInfo(
+                                        kTransitionInfoKey: TransitionInfo(
                                           hasTransition: true,
                                           transitionType:
                                               PageTransitionType.fade,
@@ -611,7 +616,7 @@ class _Auth2CadastrarWidgetState extends State<Auth2CadastrarWidget>
                                         MediaQuery.of(context).textScaler,
                                     text: TextSpan(
                                       children: [
-                                        const TextSpan(
+                                        TextSpan(
                                           text: 'Já tem uma conta? ',
                                           style: TextStyle(),
                                         ),

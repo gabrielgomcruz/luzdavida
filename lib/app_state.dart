@@ -149,7 +149,7 @@ class FFAppState extends ChangeNotifier {
     _pageNumber = value;
   }
 
-  LatLng? _minhaLocalizacao = const LatLng(-24.0030665, -46.4178533);
+  LatLng? _minhaLocalizacao = LatLng(-24.0030665, -46.4178533);
   LatLng? get minhaLocalizacao => _minhaLocalizacao;
   set minhaLocalizacao(LatLng? value) {
     _minhaLocalizacao = value;

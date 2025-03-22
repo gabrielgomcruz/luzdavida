@@ -24,8 +24,8 @@ class EditProfileAuth2Widget extends StatefulWidget {
     String? confirmButtonText,
     required this.navigateAction,
     required this.usr,
-  })  : title = title ?? 'Edit Profile',
-        confirmButtonText = confirmButtonText ?? 'Save Changes';
+  })  : this.title = title ?? 'Edit Profile',
+        this.confirmButtonText = confirmButtonText ?? 'Save Changes';
 
   final String title;
   final String confirmButtonText;
@@ -88,7 +88,7 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(24.0, 12.0, 0.0, 0.0),
+            padding: EdgeInsetsDirectional.fromSTEB(24.0, 12.0, 0.0, 0.0),
             child: Text(
               widget.title,
               style: FlutterFlowTheme.of(context).displaySmall.override(
@@ -101,9 +101,9 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
             mainAxisSize: MainAxisSize.max,
             children: [
               Align(
-                alignment: const AlignmentDirectional(0.0, -1.0),
+                alignment: AlignmentDirectional(0.0, -1.0),
                 child: Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
                   child: Container(
                     width: 100.0,
                     height: 100.0,
@@ -116,17 +116,17 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
                       ),
                     ),
                     child: Align(
-                      alignment: const AlignmentDirectional(0.0, 0.0),
+                      alignment: AlignmentDirectional(0.0, 0.0),
                       child: Stack(
                         children: [
                           Padding(
-                            padding: const EdgeInsets.all(4.0),
+                            padding: EdgeInsets.all(4.0),
                             child: AuthUserStreamWidget(
                               builder: (context) => ClipRRect(
                                 borderRadius: BorderRadius.circular(60.0),
                                 child: CachedNetworkImage(
-                                  fadeInDuration: const Duration(milliseconds: 200),
-                                  fadeOutDuration: const Duration(milliseconds: 200),
+                                  fadeInDuration: Duration(milliseconds: 200),
+                                  fadeOutDuration: Duration(milliseconds: 200),
                                   imageUrl: valueOrDefault<String>(
                                     currentUserPhoto,
                                     'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/luz-da-vida-iym9jw/assets/p49dmi4023ud/ballon.png',
@@ -145,9 +145,9 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
                 ),
               ),
               Align(
-                alignment: const AlignmentDirectional(0.0, -1.0),
+                alignment: AlignmentDirectional(0.0, -1.0),
                 child: Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
                   child: FFButtonWidget(
                     onPressed: () async {
                       final selectedMedia =
@@ -217,9 +217,9 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
                       width: 130.0,
                       height: 40.0,
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                       iconPadding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                       color: FlutterFlowTheme.of(context).inputBackground,
                       textStyle:
                           FlutterFlowTheme.of(context).bodyMedium.override(
@@ -239,18 +239,18 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
             ],
           ),
           Align(
-            alignment: const AlignmentDirectional(0.0, 0.0),
+            alignment: AlignmentDirectional(0.0, 0.0),
             child: Padding(
-              padding: const EdgeInsets.all(32.0),
+              padding: EdgeInsets.all(32.0),
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
                     child: AuthUserStreamWidget(
-                      builder: (context) => SizedBox(
+                      builder: (context) => Container(
                         width: double.infinity,
                         child: TextFormField(
                           controller: _model.nomeCompletoTextController,
@@ -311,9 +311,9 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
                     child: AuthUserStreamWidget(
-                      builder: (context) => SizedBox(
+                      builder: (context) => Container(
                         width: double.infinity,
                         child: TextFormField(
                           controller: _model.cpfTextController,
@@ -376,9 +376,9 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
                     child: AuthUserStreamWidget(
-                      builder: (context) => SizedBox(
+                      builder: (context) => Container(
                         width: double.infinity,
                         child: TextFormField(
                           controller: _model.dataNascimentoTextController,
@@ -441,9 +441,9 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
                     child: AuthUserStreamWidget(
-                      builder: (context) => SizedBox(
+                      builder: (context) => Container(
                         width: double.infinity,
                         child: TextFormField(
                           controller: _model.celularTextController,
@@ -560,7 +560,7 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
                           borderColor: FlutterFlowTheme.of(context).alternate,
                           borderWidth: 2.0,
                           borderRadius: 4.0,
-                          margin: const EdgeInsetsDirectional.fromSTEB(
+                          margin: EdgeInsetsDirectional.fromSTEB(
                               16.0, 4.0, 16.0, 4.0),
                           hidesUnderline: true,
                           isOverButton: true,
@@ -572,7 +572,7 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 14.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 14.0, 0.0, 0.0),
                     child: AuthUserStreamWidget(
                       builder: (context) => FlutterFlowDropDown<String>(
                         controller: _model.dropDownCursoValueController ??=
@@ -580,7 +580,7 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
                           _model.dropDownCursoValue ??= valueOrDefault(
                               currentUserDocument?.possuiCUrso, ''),
                         ),
-                        options: const ['Sim', 'Não'],
+                        options: ['Sim', 'Não'],
                         onChanged: (val) async {
                           safeSetState(() => _model.dropDownCursoValue = val);
                           if (_model.dropDownCursoValue == 'Não') {
@@ -588,14 +588,14 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
                               context: context,
                               builder: (alertDialogContext) {
                                 return AlertDialog(
-                                  title: const Text('Sentimos muito!'),
-                                  content: const Text(
+                                  title: Text('Sentimos muito!'),
+                                  content: Text(
                                       'Atualmente estamos trabalhando somente com cuidadores que possuem curso.'),
                                   actions: [
                                     TextButton(
                                       onPressed: () =>
                                           Navigator.pop(alertDialogContext),
-                                      child: const Text('Ok'),
+                                      child: Text('Ok'),
                                     ),
                                   ],
                                 );
@@ -623,7 +623,7 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
                         borderColor: FlutterFlowTheme.of(context).alternate,
                         borderWidth: 2.0,
                         borderRadius: 4.0,
-                        margin: const EdgeInsetsDirectional.fromSTEB(
+                        margin: EdgeInsetsDirectional.fromSTEB(
                             16.0, 4.0, 16.0, 4.0),
                         hidesUnderline: true,
                         isOverButton: true,
@@ -634,7 +634,7 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
@@ -655,12 +655,12 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
                                 ),
                           ),
                         ),
-                      ].divide(const SizedBox(width: 10.0)),
+                      ].divide(SizedBox(width: 10.0)),
                     ),
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
@@ -681,7 +681,7 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
                                     ),
                               ),
                               AuthUserStreamWidget(
-                                builder: (context) => SizedBox(
+                                builder: (context) => Container(
                                   width: double.infinity,
                                   height: 55.0,
                                   child: custom_widgets.PriceField(
@@ -703,7 +703,7 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
                                   ),
                                 ),
                               ),
-                            ].divide(const SizedBox(height: 5.0)),
+                            ].divide(SizedBox(height: 5.0)),
                           ),
                         ),
                         Expanded(
@@ -723,7 +723,7 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
                                     ),
                               ),
                               AuthUserStreamWidget(
-                                builder: (context) => SizedBox(
+                                builder: (context) => Container(
                                   width: double.infinity,
                                   height: 55.0,
                                   child: custom_widgets.PriceField2(
@@ -745,10 +745,10 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
                                   ),
                                 ),
                               ),
-                            ].divide(const SizedBox(height: 5.0)),
+                            ].divide(SizedBox(height: 5.0)),
                           ),
                         ),
-                      ].divide(const SizedBox(width: 15.0)),
+                      ].divide(SizedBox(width: 15.0)),
                     ),
                   ),
                   Row(
@@ -771,7 +771,7 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
                                   ),
                             ),
                             AuthUserStreamWidget(
-                              builder: (context) => SizedBox(
+                              builder: (context) => Container(
                                 width: double.infinity,
                                 height: 55.0,
                                 child: custom_widgets.PriceField3(
@@ -793,7 +793,7 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
                                 ),
                               ),
                             ),
-                          ].divide(const SizedBox(height: 5.0)),
+                          ].divide(SizedBox(height: 5.0)),
                         ),
                       ),
                       Expanded(
@@ -813,7 +813,7 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
                                   ),
                             ),
                             AuthUserStreamWidget(
-                              builder: (context) => SizedBox(
+                              builder: (context) => Container(
                                 width: double.infinity,
                                 height: 55.0,
                                 child: custom_widgets.HoraAdicional(
@@ -834,14 +834,14 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
                                 ),
                               ),
                             ),
-                          ].divide(const SizedBox(height: 5.0)),
+                          ].divide(SizedBox(height: 5.0)),
                         ),
                       ),
-                    ].divide(const SizedBox(width: 15.0)),
+                    ].divide(SizedBox(width: 15.0)),
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
@@ -862,7 +862,7 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
                                 ),
                           ),
                         ),
-                      ].divide(const SizedBox(width: 10.0)),
+                      ].divide(SizedBox(width: 10.0)),
                     ),
                   ),
                   StreamBuilder<UsersRecord>(
@@ -886,7 +886,7 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
                       final containerUsersRecord = snapshot.data!;
 
                       return Container(
-                        decoration: const BoxDecoration(),
+                        decoration: BoxDecoration(),
                         child: Visibility(
                           visible: containerUsersRecord.arquivo != '',
                           child: Row(
@@ -926,8 +926,8 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
                                             context: context,
                                             builder: (alertDialogContext) {
                                               return AlertDialog(
-                                                title: const Text('Tem certeza?'),
-                                                content: const Text(
+                                                title: Text('Tem certeza?'),
+                                                content: Text(
                                                     'Você removerá seu arquivo de antecedentes criminais, tem certeza?'),
                                                 actions: [
                                                   TextButton(
@@ -935,14 +935,14 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
                                                         Navigator.pop(
                                                             alertDialogContext,
                                                             false),
-                                                    child: const Text('Voltar'),
+                                                    child: Text('Voltar'),
                                                   ),
                                                   TextButton(
                                                     onPressed: () =>
                                                         Navigator.pop(
                                                             alertDialogContext,
                                                             true),
-                                                    child: const Text('Excluir'),
+                                                    child: Text('Excluir'),
                                                   ),
                                                 ],
                                               );
@@ -972,7 +972,7 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
                     },
                   ),
                   Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 6.0, 0.0, 0.0),
+                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 6.0, 0.0, 0.0),
                     child: FFButtonWidget(
                       onPressed: () async {
                         final selectedFiles = await selectFiles(
@@ -1039,17 +1039,17 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
                         await _model.waitForRequestCompleted();
                       },
                       text: 'Antecedentes criminais',
-                      icon: const Icon(
+                      icon: Icon(
                         Icons.file_download_outlined,
                         size: 25.0,
                       ),
                       options: FFButtonOptions(
                         width: double.infinity,
                         height: 54.0,
-                        padding: const EdgeInsetsDirectional.fromSTEB(
+                        padding: EdgeInsetsDirectional.fromSTEB(
                             24.0, 0.0, 24.0, 0.0),
                         iconPadding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                         color: FlutterFlowTheme.of(context).primary,
                         textStyle:
                             FlutterFlowTheme.of(context).titleSmall.override(
@@ -1060,7 +1060,7 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
                                   fontWeight: FontWeight.bold,
                                 ),
                         elevation: 3.0,
-                        borderSide: const BorderSide(
+                        borderSide: BorderSide(
                           color: Colors.transparent,
                           width: 1.0,
                         ),
@@ -1070,7 +1070,7 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 22.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 22.0, 0.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
@@ -1091,7 +1091,7 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
                                 ),
                           ),
                         ),
-                      ].divide(const SizedBox(width: 10.0)),
+                      ].divide(SizedBox(width: 10.0)),
                     ),
                   ),
                   AuthUserStreamWidget(
@@ -1145,7 +1145,7 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
                                     fontFamily: 'Inter Tight',
                                     letterSpacing: 0.0,
                                   ),
-                          itemPadding: const EdgeInsetsDirectional.fromSTEB(
+                          itemPadding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 12.0, 0.0, 0.0),
                           checkboxBorderRadius: BorderRadius.circular(4.0),
                           initialized: _model.checkboxGroupValues != null,
@@ -1153,18 +1153,18 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
                       },
                     ),
                   ),
-                ].divide(const SizedBox(height: 5.0)),
+                ].divide(SizedBox(height: 5.0)),
               ),
             ),
           ),
-          const Divider(
+          Divider(
             thickness: 1.0,
             color: Color(0xB3989898),
           ),
           Align(
-            alignment: const AlignmentDirectional(0.0, 0.0),
+            alignment: AlignmentDirectional(0.0, 0.0),
             child: Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 20.0, 0.0),
+              padding: EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 20.0, 0.0),
               child: FFButtonWidget(
                 onPressed: (_model.dropDownCursoValue == 'Não')
                     ? null
@@ -1218,7 +1218,7 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
                                       letterSpacing: 0.0,
                                     ),
                               ),
-                              duration: const Duration(milliseconds: 4000),
+                              duration: Duration(milliseconds: 4000),
                               backgroundColor:
                                   FlutterFlowTheme.of(context).primary,
                             ),
@@ -1234,7 +1234,7 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
                                       .secondaryBackground,
                                 ),
                               ),
-                              duration: const Duration(milliseconds: 4000),
+                              duration: Duration(milliseconds: 4000),
                               backgroundColor:
                                   FlutterFlowTheme.of(context).error,
                             ),
@@ -1245,16 +1245,16 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
                 options: FFButtonOptions(
                   width: double.infinity,
                   height: 49.0,
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                   iconPadding:
-                      const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                      EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                   color: FlutterFlowTheme.of(context).primary,
                   textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                         fontFamily: 'Inter Tight',
                         letterSpacing: 0.0,
                       ),
                   elevation: 3.0,
-                  borderSide: const BorderSide(
+                  borderSide: BorderSide(
                     color: Colors.transparent,
                     width: 1.0,
                   ),

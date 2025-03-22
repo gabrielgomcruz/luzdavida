@@ -54,17 +54,17 @@ class _QrCodeWidgetState extends State<QrCodeWidget> {
         child: Container(
           width: double.infinity,
           height: double.infinity,
-          decoration: const BoxDecoration(
+          decoration: BoxDecoration(
             color: Color(0xCCFFFFFF),
           ),
-          alignment: const AlignmentDirectional(0.0, 1.0),
+          alignment: AlignmentDirectional(0.0, 1.0),
           child: Column(
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
               Container(
                 width: double.infinity,
-                decoration: const BoxDecoration(
+                decoration: BoxDecoration(
                   color: Colors.white,
                   boxShadow: [
                     BoxShadow(
@@ -84,7 +84,7 @@ class _QrCodeWidgetState extends State<QrCodeWidget> {
                   ),
                 ),
                 child: Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.start,
@@ -95,13 +95,13 @@ class _QrCodeWidgetState extends State<QrCodeWidget> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 5.0, 0.0, 0.0),
                             child: Container(
                               width: 60.0,
                               height: 3.0,
                               decoration: BoxDecoration(
-                                color: const Color(0xFFE0E3E7),
+                                color: Color(0xFFE0E3E7),
                                 borderRadius: BorderRadius.circular(4.0),
                               ),
                             ),
@@ -110,14 +110,14 @@ class _QrCodeWidgetState extends State<QrCodeWidget> {
                       ),
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 26.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 26.0, 0.0, 0.0),
                         child: Text(
                           'Qr Code',
                           style: FlutterFlowTheme.of(context)
                               .headlineSmall
                               .override(
                                 fontFamily: 'Outfit',
-                                color: const Color(0xFF14181B),
+                                color: Color(0xFF14181B),
                                 fontSize: 24.0,
                                 letterSpacing: 0.0,
                                 fontWeight: FontWeight.w500,
@@ -134,14 +134,14 @@ class _QrCodeWidgetState extends State<QrCodeWidget> {
                         height: 300.0,
                         color: FlutterFlowTheme.of(context).primaryText,
                         backgroundColor: Colors.transparent,
-                        errorBuilder: (context, error) => const SizedBox(
+                        errorBuilder: (_context, _error) => SizedBox(
                           width: 300.0,
                           height: 300.0,
                         ),
                         drawText: false,
                       ),
                       Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
+                        padding: EdgeInsetsDirectional.fromSTEB(
                             0.0, 16.0, 0.0, 90.0),
                         child: Text(
                           valueOrDefault<String>(
@@ -152,14 +152,14 @@ class _QrCodeWidgetState extends State<QrCodeWidget> {
                               .headlineSmall
                               .override(
                                 fontFamily: 'Outfit',
-                                color: const Color(0xFF14181B),
+                                color: Color(0xFF14181B),
                                 fontSize: 24.0,
                                 letterSpacing: 0.0,
                                 fontWeight: FontWeight.w500,
                               ),
                         ),
                       ),
-                    ].divide(const SizedBox(height: 10.0)),
+                    ].divide(SizedBox(height: 10.0)),
                   ),
                 ),
               ),

@@ -10,7 +10,7 @@ class ServiosQueOfereoTable extends SupabaseTable<ServiosQueOfereoRow> {
 }
 
 class ServiosQueOfereoRow extends SupabaseDataRow {
-  ServiosQueOfereoRow(super.data);
+  ServiosQueOfereoRow(Map<String, dynamic> data) : super(data);
 
   @override
   SupabaseTable get table => ServiosQueOfereoTable();

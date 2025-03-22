@@ -16,6 +16,9 @@ export 'servicos_que_ofereco_model.dart';
 class ServicosQueOferecoWidget extends StatefulWidget {
   const ServicosQueOferecoWidget({super.key});
 
+  static String routeName = 'servicosQueOfereco';
+  static String routePath = '/servicosQueOfereco';
+
   @override
   State<ServicosQueOferecoWidget> createState() =>
       _ServicosQueOferecoWidgetState();
@@ -56,8 +59,8 @@ class _ServicosQueOferecoWidgetState extends State<ServicosQueOferecoWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 400.0.ms,
-            begin: const Offset(3.0, 3.0),
-            end: const Offset(1.0, 1.0),
+            begin: Offset(3.0, 3.0),
+            end: Offset(1.0, 1.0),
           ),
         ],
       ),
@@ -86,10 +89,10 @@ class _ServicosQueOferecoWidgetState extends State<ServicosQueOferecoWidget>
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
         body: Align(
-          alignment: const AlignmentDirectional(0.0, -1.0),
+          alignment: AlignmentDirectional(0.0, -1.0),
           child: Container(
             width: double.infinity,
-            constraints: const BoxConstraints(
+            constraints: BoxConstraints(
               maxWidth: 770.0,
             ),
             decoration: BoxDecoration(
@@ -100,7 +103,7 @@ class _ServicosQueOferecoWidgetState extends State<ServicosQueOferecoWidget>
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(
+                Container(
                   height: 128.0,
                   child: Stack(
                     children: [
@@ -109,7 +112,7 @@ class _ServicosQueOferecoWidgetState extends State<ServicosQueOferecoWidget>
                         elevation: 5.0,
                         child: Container(
                           width: double.infinity,
-                          decoration: const BoxDecoration(),
+                          decoration: BoxDecoration(),
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(8.0),
                             child: Image.asset(
@@ -121,7 +124,7 @@ class _ServicosQueOferecoWidgetState extends State<ServicosQueOferecoWidget>
                         ),
                       ),
                       Align(
-                        alignment: const AlignmentDirectional(0.0, 0.0),
+                        alignment: AlignmentDirectional(0.0, 0.0),
                         child: Container(
                           width: double.infinity,
                           height: double.infinity,
@@ -130,20 +133,20 @@ class _ServicosQueOferecoWidgetState extends State<ServicosQueOferecoWidget>
                               colors: [
                                 FlutterFlowTheme.of(context)
                                     .secondaryBackground,
-                                const Color(0x90FFFFFF)
+                                Color(0x90FFFFFF)
                               ],
-                              stops: const [0.0, 0.5],
-                              begin: const AlignmentDirectional(-1.0, -1.0),
-                              end: const AlignmentDirectional(1.0, 1.0),
+                              stops: [0.0, 0.5],
+                              begin: AlignmentDirectional(-1.0, -1.0),
+                              end: AlignmentDirectional(1.0, 1.0),
                             ),
                           ),
                         ).animateOnPageLoad(
                             animationsMap['containerOnPageLoadAnimation']!),
                       ),
                       Align(
-                        alignment: const AlignmentDirectional(-1.0, 1.0),
+                        alignment: AlignmentDirectional(-1.0, 1.0),
                         child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               24.0, 0.0, 0.0, 0.0),
                           child: Container(
                             width: 90.0,
@@ -158,14 +161,14 @@ class _ServicosQueOferecoWidgetState extends State<ServicosQueOferecoWidget>
                               ),
                             ),
                             child: Padding(
-                              padding: const EdgeInsets.all(4.0),
+                              padding: EdgeInsets.all(4.0),
                               child: AuthUserStreamWidget(
                                 builder: (context) => ClipRRect(
                                   borderRadius: BorderRadius.circular(50.0),
                                   child: CachedNetworkImage(
-                                    fadeInDuration: const Duration(milliseconds: 500),
+                                    fadeInDuration: Duration(milliseconds: 500),
                                     fadeOutDuration:
-                                        const Duration(milliseconds: 500),
+                                        Duration(milliseconds: 500),
                                     imageUrl: valueOrDefault<String>(
                                       currentUserPhoto,
                                       'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/luz-da-vida-iym9jw/assets/p49dmi4023ud/ballon.png',
@@ -181,15 +184,15 @@ class _ServicosQueOferecoWidgetState extends State<ServicosQueOferecoWidget>
                         ),
                       ),
                       Align(
-                        alignment: const AlignmentDirectional(0.93, -0.67),
+                        alignment: AlignmentDirectional(0.93, -0.67),
                         child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 5.0, 0.0, 0.0),
                           child: Image.asset(
                             'assets/images/Design_sem_nome_(3).png',
                             width: 88.0,
                             fit: BoxFit.contain,
-                            alignment: const Alignment(0.0, -1.0),
+                            alignment: Alignment(0.0, -1.0),
                           ),
                         ),
                       ),
@@ -197,7 +200,7 @@ class _ServicosQueOferecoWidgetState extends State<ServicosQueOferecoWidget>
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(24.0, 12.0, 0.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(24.0, 12.0, 0.0, 0.0),
                   child: AuthUserStreamWidget(
                     builder: (context) => Text(
                       currentUserDisplayName,
@@ -209,7 +212,7 @@ class _ServicosQueOferecoWidgetState extends State<ServicosQueOferecoWidget>
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(24.0, 4.0, 0.0, 16.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(24.0, 4.0, 0.0, 16.0),
                   child: Text(
                     valueOrDefault<String>(
                       currentUserEmail,
@@ -224,7 +227,7 @@ class _ServicosQueOferecoWidgetState extends State<ServicosQueOferecoWidget>
                 ),
                 Padding(
                   padding:
-                      const EdgeInsetsDirectional.fromSTEB(15.0, 12.0, 0.0, 15.0),
+                      EdgeInsetsDirectional.fromSTEB(15.0, 12.0, 0.0, 15.0),
                   child: Text(
                     'Serviços que ofereço',
                     style: FlutterFlowTheme.of(context).displaySmall.override(
@@ -277,7 +280,7 @@ class _ServicosQueOferecoWidgetState extends State<ServicosQueOferecoWidget>
                                 fontFamily: 'Inter Tight',
                                 letterSpacing: 0.0,
                               ),
-                      itemPadding: const EdgeInsets.all(8.0),
+                      itemPadding: EdgeInsets.all(8.0),
                       checkboxBorderRadius: BorderRadius.circular(4.0),
                       initialized: _model.checkboxGroupValues != null,
                     );

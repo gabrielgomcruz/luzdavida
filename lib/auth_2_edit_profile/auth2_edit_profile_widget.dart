@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/actions/actions.dart' as action_blocks;
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'auth2_edit_profile_model.dart';
@@ -11,6 +12,9 @@ export 'auth2_edit_profile_model.dart';
 
 class Auth2EditProfileWidget extends StatefulWidget {
   const Auth2EditProfileWidget({super.key});
+
+  static String routeName = 'auth_2_EditProfile';
+  static String routePath = '/auth2EditProfile';
 
   @override
   State<Auth2EditProfileWidget> createState() => _Auth2EditProfileWidgetState();
@@ -59,7 +63,7 @@ class _Auth2EditProfileWidgetState extends State<Auth2EditProfileWidget> {
             borderRadius: 30.0,
             borderWidth: 1.0,
             buttonSize: 60.0,
-            icon: const Icon(
+            icon: Icon(
               Icons.arrow_back_rounded,
               color: Colors.white,
               size: 30.0,
@@ -70,7 +74,7 @@ class _Auth2EditProfileWidgetState extends State<Auth2EditProfileWidget> {
           ),
           actions: [
             Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 20.0, 0.0),
+              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 20.0, 0.0),
               child: InkWell(
                 splashColor: Colors.transparent,
                 focusColor: Colors.transparent,
@@ -81,9 +85,10 @@ class _Auth2EditProfileWidgetState extends State<Auth2EditProfileWidget> {
                   await authManager.signOut();
                   GoRouter.of(context).clearRedirectLocation();
 
-                  context.goNamedAuth('auth_2_Login', context.mounted);
+                  context.goNamedAuth(
+                      Auth2LoginWidget.routeName, context.mounted);
                 },
-                child: const Icon(
+                child: Icon(
                   Icons.output_rounded,
                   color: Color(0xFFD2D2D2),
                   size: 35.0,
@@ -96,20 +101,20 @@ class _Auth2EditProfileWidgetState extends State<Auth2EditProfileWidget> {
         ),
         body: Container(
           height: double.infinity,
-          decoration: const BoxDecoration(),
+          decoration: BoxDecoration(),
           child: SingleChildScrollView(
             child: Column(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Align(
-                  alignment: const AlignmentDirectional(0.0, -1.0),
+                  alignment: AlignmentDirectional(0.0, -1.0),
                   child: Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 100.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 100.0),
                     child: Container(
                       width: double.infinity,
-                      constraints: const BoxConstraints(
+                      constraints: BoxConstraints(
                         maxWidth: 770.0,
                       ),
                       decoration: BoxDecoration(
@@ -124,7 +129,7 @@ class _Auth2EditProfileWidgetState extends State<Auth2EditProfileWidget> {
                           confirmButtonText: 'Salvar',
                           usr: currentUserReference!,
                           navigateAction: () async {
-                            context.pushNamed('ProfileVendedor');
+                            context.pushNamed(ProfileVendedorWidget.routeName);
                           },
                         ),
                       ),

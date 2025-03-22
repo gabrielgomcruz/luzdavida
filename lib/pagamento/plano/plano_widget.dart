@@ -4,8 +4,8 @@ import '/components/toast04_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import '/actions/actions.dart' as action_blocks;
+import '/flutter_flow/revenue_cat_util.dart' as revenue_cat;
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:provider/provider.dart';
@@ -14,6 +14,9 @@ export 'plano_model.dart';
 
 class PlanoWidget extends StatefulWidget {
   const PlanoWidget({super.key});
+
+  static String routeName = 'plano';
+  static String routePath = '/plano';
 
   @override
   State<PlanoWidget> createState() => _PlanoWidgetState();
@@ -86,7 +89,7 @@ class _PlanoWidgetState extends State<PlanoWidget> {
               context.safePop();
             },
           ),
-          actions: const [],
+          actions: [],
           centerTitle: true,
           elevation: 0.0,
         ),
@@ -100,18 +103,18 @@ class _PlanoWidgetState extends State<PlanoWidget> {
                 if (currentUserDocument!.dataDoProxPagamento! <=
                     getCurrentTimestamp)
                   Padding(
-                    padding: const EdgeInsets.all(18.0),
+                    padding: EdgeInsets.all(18.0),
                     child: AuthUserStreamWidget(
                       builder: (context) => wrapWithModel(
                         model: _model.toast04Model,
                         updateCallback: () => safeSetState(() {}),
-                        child: const Toast04Widget(),
+                        child: Toast04Widget(),
                       ),
                     ),
                   ),
                 Padding(
                   padding:
-                      const EdgeInsetsDirectional.fromSTEB(16.0, 22.0, 0.0, 10.0),
+                      EdgeInsetsDirectional.fromSTEB(16.0, 22.0, 0.0, 10.0),
                   child: Text(
                     'Planos',
                     style: FlutterFlowTheme.of(context).headlineMedium.override(
@@ -121,7 +124,7 @@ class _PlanoWidgetState extends State<PlanoWidget> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
                   child: AuthUserStreamWidget(
                     builder: (context) => Text(
                       'Seu plano vence em: ${valueOrDefault<String>(
@@ -141,54 +144,59 @@ class _PlanoWidgetState extends State<PlanoWidget> {
                     ),
                   ),
                 ),
-                Builder(
-                  builder: (context) {
-                    final planos =
-                        FFAppState().Planos.unique((e) => e).toList();
-
-                    return Column(
-                      mainAxisSize: MainAxisSize.max,
-                      children: List.generate(planos.length, (planosIndex) {
-                        final planosItem = planos[planosIndex];
-                        return Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
-                              16.0, 12.0, 16.0, 0.0),
-                          child: InkWell(
-                            splashColor: Colors.transparent,
-                            focusColor: Colors.transparent,
-                            hoverColor: Colors.transparent,
-                            highlightColor: Colors.transparent,
-                            onTap: () async {
-                              FFAppState().Planoescolhido = planosItem;
-                              FFAppState().update(() {});
-                            },
-                            child: Container(
-                              width: double.infinity,
-                              decoration: BoxDecoration(
-                                color: FlutterFlowTheme.of(context)
-                                    .secondaryBackground,
-                                boxShadow: const [
-                                  BoxShadow(
-                                    blurRadius: 5.0,
-                                    color: Color(0x34111417),
-                                    offset: Offset(
-                                      0.0,
-                                      2.0,
-                                    ),
-                                  )
-                                ],
-                                borderRadius: BorderRadius.circular(8.0),
+                Column(
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    Padding(
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 0.0),
+                      child: Container(
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                          color:
+                              FlutterFlowTheme.of(context).secondaryBackground,
+                          boxShadow: [
+                            BoxShadow(
+                              blurRadius: 5.0,
+                              color: Color(0x34111417),
+                              offset: Offset(
+                                0.0,
+                                2.0,
                               ),
-                              child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 0.0, 12.0),
-                                child: Column(
-                                  mainAxisSize: MainAxisSize.max,
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Padding(
-                                      padding: const EdgeInsets.all(14.0),
+                            )
+                          ],
+                          borderRadius: BorderRadius.circular(8.0),
+                        ),
+                        child: Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 0.0, 0.0, 12.0),
+                          child: Builder(
+                            builder: (context) {
+                              final pkg = revenue_cat
+                                  .offerings!.current!.availablePackages
+                                  .toList();
+
+                              return Column(
+                                mainAxisSize: MainAxisSize.max,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: List.generate(pkg.length, (pkgIndex) {
+                                  final pkgItem = pkg[pkgIndex];
+                                  return Padding(
+                                    padding: EdgeInsets.all(14.0),
+                                    child: InkWell(
+                                      splashColor: Colors.transparent,
+                                      focusColor: Colors.transparent,
+                                      hoverColor: Colors.transparent,
+                                      highlightColor: Colors.transparent,
+                                      onTap: () async {
+                                        final isEntitled = await revenue_cat
+                                                .isEntitled('pro') ??
+                                            false;
+                                        if (!isEntitled) {
+                                          await revenue_cat.loadOfferings();
+                                        }
+                                      },
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
                                         mainAxisAlignment:
@@ -200,7 +208,7 @@ class _PlanoWidgetState extends State<PlanoWidget> {
                                                 CrossAxisAlignment.start,
                                             children: [
                                               Text(
-                                                planosItem.nomedoplano,
+                                                pkgItem.storeProduct.title,
                                                 style:
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
@@ -211,14 +219,8 @@ class _PlanoWidgetState extends State<PlanoWidget> {
                                                         ),
                                               ),
                                               Text(
-                                                '${planosItem.installments.toString()}x de ${formatNumber(
-                                                  planosItem.preco,
-                                                  formatType:
-                                                      FormatType.decimal,
-                                                  decimalType:
-                                                      DecimalType.commaDecimal,
-                                                  currency: 'R\$',
-                                                )}',
+                                                pkgItem
+                                                    .storeProduct.priceString,
                                                 style:
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
@@ -233,78 +235,18 @@ class _PlanoWidgetState extends State<PlanoWidget> {
                                               ),
                                             ],
                                           ),
-                                          Builder(
-                                            builder: (context) {
-                                              if (FFAppState()
-                                                      .Planoescolhido
-                                                      .nomedoplano ==
-                                                  planosItem.nomedoplano) {
-                                                return Icon(
-                                                  Icons.check_circle,
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .secondaryText,
-                                                  size: 24.0,
-                                                );
-                                              } else {
-                                                return Icon(
-                                                  Icons.circle_outlined,
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .secondaryText,
-                                                  size: 24.0,
-                                                );
-                                              }
-                                            },
-                                          ),
                                         ],
                                       ),
                                     ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                          ),
-                        );
-                      }),
-                    );
-                  },
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(14.0),
-                  child: AuthUserStreamWidget(
-                    builder: (context) => FFButtonWidget(
-                      onPressed: ((FFAppState().Planoescolhido == null) &&
-                              (currentUserDocument?.planoEscolhido == null))
-                          ? null
-                          : () async {
-                              context.pushNamed('Pagamento');
+                                  );
+                                }),
+                              );
                             },
-                      text: 'Escolher forma de pagamento',
-                      options: FFButtonOptions(
-                        width: double.infinity,
-                        height: 48.0,
-                        padding: const EdgeInsetsDirectional.fromSTEB(
-                            24.0, 0.0, 24.0, 0.0),
-                        iconPadding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                        color: FlutterFlowTheme.of(context).primary,
-                        textStyle:
-                            FlutterFlowTheme.of(context).titleSmall.override(
-                                  fontFamily: 'Inter Tight',
-                                  color: Colors.white,
-                                  letterSpacing: 0.0,
-                                ),
-                        elevation: 1.0,
-                        borderSide: const BorderSide(
-                          color: Colors.transparent,
-                          width: 1.0,
+                          ),
                         ),
-                        borderRadius: BorderRadius.circular(8.0),
-                        disabledColor: const Color(0x36303825),
                       ),
                     ),
-                  ),
+                  ],
                 ),
               ],
             ),

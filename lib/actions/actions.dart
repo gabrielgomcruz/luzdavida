@@ -8,7 +8,7 @@ import 'package:flutter/material.dart';
 Future pixValidation(BuildContext context) async {
   ApiCallResponse? apiResult12x;
   LatLng currentUserLocationValue =
-      await getCurrentUserLocation(defaultLocation: const LatLng(0.0, 0.0));
+      await getCurrentUserLocation(defaultLocation: LatLng(0.0, 0.0));
 
   if (valueOrDefault(currentUserDocument?.precisaValidarPixPixID, '') != '') {
     apiResult12x = await StatusPixMPCall.call(
@@ -24,12 +24,12 @@ Future pixValidation(BuildContext context) async {
         context: context,
         builder: (alertDialogContext) {
           return AlertDialog(
-            title: const Text('Sucesso!'),
-            content: const Text('Pagamento realizado.'),
+            title: Text('Sucesso!'),
+            content: Text('Pagamento realizado.'),
             actions: [
               TextButton(
                 onPressed: () => Navigator.pop(alertDialogContext),
-                child: const Text('Ok'),
+                child: Text('Ok'),
               ),
             ],
           );

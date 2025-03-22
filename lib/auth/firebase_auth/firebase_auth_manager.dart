@@ -71,7 +71,7 @@ class FirebaseAuthManager extends AuthManager
       if (e.code == 'requires-recent-login') {
         ScaffoldMessenger.of(context).hideCurrentSnackBar();
         ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(
+          SnackBar(
               content: Text(
                   'Já faz um tempinho que você não entra. Faz o login de novo pra gente, antes de deletar sua conta.')),
         );
@@ -95,7 +95,7 @@ class FirebaseAuthManager extends AuthManager
       if (e.code == 'requires-recent-login') {
         ScaffoldMessenger.of(context).hideCurrentSnackBar();
         ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(
+          SnackBar(
               content: Text(
                   'Ops! Precisa entrar de novo antes de mudar o email, faz tempo que você não faz login.')),
         );
@@ -139,7 +139,7 @@ class FirebaseAuthManager extends AuthManager
       return null;
     }
     ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(
+      SnackBar(
           content:
               Text('Beleza! Mandamos um email pra você redefinir sua senha.')),
     );
@@ -236,7 +236,7 @@ class FirebaseAuthManager extends AuthManager
     await FirebaseAuth.instance.verifyPhoneNumber(
       phoneNumber: phoneNumber,
       timeout:
-          const Duration(seconds: 0), // Skips Android's default auto-verification
+          Duration(seconds: 0), // Skips Android's default auto-verification
       verificationCompleted: (phoneAuthCredential) async {
         await FirebaseAuth.instance.signInWithCredential(phoneAuthCredential);
         phoneAuthManager.update(() {

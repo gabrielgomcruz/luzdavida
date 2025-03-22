@@ -7,15 +7,18 @@ import '/backend/schema/structs/index.dart';
 
 import '/auth/base_auth_user_provider.dart';
 
-import '/index.dart';
 import '/main.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+
+import '/index.dart';
 
 export 'package:go_router/go_router.dart';
 export 'serialization_util.dart';
 
 const kTransitionInfoKey = '__transition_info__';
+
+GlobalKey<NavigatorState> appNavigatorKey = GlobalKey<NavigatorState>();
 
 class AppStateNotifier extends ChangeNotifier {
   AppStateNotifier._();
@@ -74,84 +77,85 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       initialLocation: '/',
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
+      navigatorKey: appNavigatorKey,
       errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? const NavBarPage() : const Auth2LoginWidget(),
+          appStateNotifier.loggedIn ? NavBarPage() : Auth2LoginWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) =>
-              appStateNotifier.loggedIn ? const NavBarPage() : const Auth2LoginWidget(),
+              appStateNotifier.loggedIn ? NavBarPage() : Auth2LoginWidget(),
         ),
         FFRoute(
-          name: 'auth_2_Cadastrar',
-          path: '/auth2Cadastrar',
-          builder: (context, params) => const Auth2CadastrarWidget(),
+          name: Auth2CadastrarWidget.routeName,
+          path: Auth2CadastrarWidget.routePath,
+          builder: (context, params) => Auth2CadastrarWidget(),
         ),
         FFRoute(
-          name: 'auth_2_Login',
-          path: '/auth2Login',
-          builder: (context, params) => const Auth2LoginWidget(),
+          name: Auth2LoginWidget.routeName,
+          path: Auth2LoginWidget.routePath,
+          builder: (context, params) => Auth2LoginWidget(),
         ),
         FFRoute(
-          name: 'auth_2_ForgotPassword',
-          path: '/auth2ForgotPassword',
-          builder: (context, params) => const Auth2ForgotPasswordWidget(),
+          name: Auth2ForgotPasswordWidget.routeName,
+          path: Auth2ForgotPasswordWidget.routePath,
+          builder: (context, params) => Auth2ForgotPasswordWidget(),
         ),
         FFRoute(
-          name: 'auth_2_createProfile',
-          path: '/auth2CreateProfile',
-          builder: (context, params) => const Auth2CreateProfileWidget(),
+          name: Auth2CreateProfileWidget.routeName,
+          path: Auth2CreateProfileWidget.routePath,
+          builder: (context, params) => Auth2CreateProfileWidget(),
         ),
         FFRoute(
-          name: 'unavailable',
-          path: '/unavailable',
-          builder: (context, params) => const UnavailableWidget(),
+          name: UnavailableWidget.routeName,
+          path: UnavailableWidget.routePath,
+          builder: (context, params) => UnavailableWidget(),
         ),
         FFRoute(
-          name: 'auth_2_EditProfile',
-          path: '/auth2EditProfile',
+          name: Auth2EditProfileWidget.routeName,
+          path: Auth2EditProfileWidget.routePath,
           builder: (context, params) => params.isEmpty
-              ? const NavBarPage(initialPage: 'auth_2_EditProfile')
-              : const Auth2EditProfileWidget(),
+              ? NavBarPage(initialPage: 'auth_2_EditProfile')
+              : Auth2EditProfileWidget(),
         ),
         FFRoute(
-          name: 'EuSou',
-          path: '/euSou',
-          builder: (context, params) => const EuSouWidget(),
+          name: EuSouWidget.routeName,
+          path: EuSouWidget.routePath,
+          builder: (context, params) => EuSouWidget(),
         ),
         FFRoute(
-          name: 'ProfileVendedor',
-          path: '/profileVendedor',
+          name: ProfileVendedorWidget.routeName,
+          path: ProfileVendedorWidget.routePath,
           builder: (context, params) => params.isEmpty
-              ? const NavBarPage(initialPage: 'ProfileVendedor')
-              : const ProfileVendedorWidget(),
+              ? NavBarPage(initialPage: 'ProfileVendedor')
+              : ProfileVendedorWidget(),
         ),
         FFRoute(
-          name: 'servicosQueOfereco',
-          path: '/servicosQueOfereco',
-          builder: (context, params) => const ServicosQueOferecoWidget(),
+          name: ServicosQueOferecoWidget.routeName,
+          path: ServicosQueOferecoWidget.routePath,
+          builder: (context, params) => ServicosQueOferecoWidget(),
         ),
         FFRoute(
-          name: 'homeCliente',
-          path: '/homeCliente',
-          builder: (context, params) => const HomeClienteWidget(),
+          name: HomeClienteWidget.routeName,
+          path: HomeClienteWidget.routePath,
+          builder: (context, params) => HomeClienteWidget(),
         ),
         FFRoute(
-          name: 'plano',
-          path: '/plano',
+          name: PlanoWidget.routeName,
+          path: PlanoWidget.routePath,
           builder: (context, params) =>
-              params.isEmpty ? const NavBarPage(initialPage: 'plano') : const PlanoWidget(),
+              params.isEmpty ? NavBarPage(initialPage: 'plano') : PlanoWidget(),
         ),
         FFRoute(
-          name: 'Pagamento',
-          path: '/pagamento',
-          builder: (context, params) => const PagamentoWidget(),
+          name: PagamentoWidget.routeName,
+          path: PagamentoWidget.routePath,
+          builder: (context, params) => PagamentoWidget(),
         ),
         FFRoute(
-          name: 'sucesso',
-          path: '/sucesso',
-          builder: (context, params) => const SucessoWidget(),
+          name: SucessoWidget.routeName,
+          path: SucessoWidget.routePath,
+          builder: (context, params) => SucessoWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
@@ -391,7 +395,7 @@ class TransitionInfo {
   final Duration duration;
   final Alignment? alignment;
 
-  static TransitionInfo appDefault() => const TransitionInfo(hasTransition: false);
+  static TransitionInfo appDefault() => TransitionInfo(hasTransition: false);
 }
 
 class RootPageContext {

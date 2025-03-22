@@ -10,6 +10,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -19,6 +20,9 @@ export 'home_cliente_model.dart';
 
 class HomeClienteWidget extends StatefulWidget {
   const HomeClienteWidget({super.key});
+
+  static String routeName = 'homeCliente';
+  static String routePath = '/homeCliente';
 
   @override
   State<HomeClienteWidget> createState() => _HomeClienteWidgetState();
@@ -37,7 +41,7 @@ class _HomeClienteWidgetState extends State<HomeClienteWidget> {
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       if (currentUserDocument?.euSou == EuSou.Vendedor) {
-        context.pushNamed('ProfileVendedor');
+        context.pushNamed(ProfileVendedorWidget.routeName);
       }
     });
 
@@ -66,7 +70,7 @@ class _HomeClienteWidgetState extends State<HomeClienteWidget> {
           automaticallyImplyLeading: false,
           title: AuthUserStreamWidget(
             builder: (context) => Text(
-              'Olá $currentUserDisplayName',
+              'Olá ${currentUserDisplayName}',
               style: FlutterFlowTheme.of(context).headlineMedium.override(
                     fontFamily: 'Inter Tight',
                     letterSpacing: 0.0,
@@ -75,7 +79,7 @@ class _HomeClienteWidgetState extends State<HomeClienteWidget> {
           ),
           actions: [
             Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 12.0, 0.0),
+              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 12.0, 0.0),
               child: InkWell(
                 splashColor: Colors.transparent,
                 focusColor: Colors.transparent,
@@ -86,7 +90,8 @@ class _HomeClienteWidgetState extends State<HomeClienteWidget> {
                   await authManager.signOut();
                   GoRouter.of(context).clearRedirectLocation();
 
-                  context.goNamedAuth('auth_2_Login', context.mounted);
+                  context.goNamedAuth(
+                      Auth2LoginWidget.routeName, context.mounted);
                 },
                 child: Icon(
                   Icons.logout_rounded,
@@ -102,7 +107,7 @@ class _HomeClienteWidgetState extends State<HomeClienteWidget> {
         body: SafeArea(
           top: true,
           child: Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
+            padding: EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
             child: SingleChildScrollView(
               primary: false,
               child: Column(
@@ -111,7 +116,7 @@ class _HomeClienteWidgetState extends State<HomeClienteWidget> {
                 children: [
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 0.0, 0.0),
                     child: Text(
                       'Serviços',
                       style:
@@ -129,7 +134,7 @@ class _HomeClienteWidgetState extends State<HomeClienteWidget> {
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 8.0, 0.0, 8.0),
                           child: FutureBuilder<List<ServiosQueOfereoRow>>(
                             future: ServiosQueOfereoTable().queryRows(
@@ -223,13 +228,13 @@ class _HomeClienteWidgetState extends State<HomeClienteWidget> {
                           ),
                         ),
                       ]
-                          .addToStart(const SizedBox(width: 16.0))
-                          .addToEnd(const SizedBox(width: 16.0)),
+                          .addToStart(SizedBox(width: 16.0))
+                          .addToEnd(SizedBox(width: 16.0)),
                     ),
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 0.0, 0.0),
                     child: Text(
                       'Cidade',
                       style:
@@ -243,7 +248,7 @@ class _HomeClienteWidgetState extends State<HomeClienteWidget> {
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(16.0, 5.0, 16.0, 16.0),
+                        EdgeInsetsDirectional.fromSTEB(16.0, 5.0, 16.0, 16.0),
                     child: FutureBuilder<List<CidadesDisponveisRow>>(
                       future: CidadesDisponveisTable().queryRows(
                         queryFn: (q) => q,
@@ -295,7 +300,7 @@ class _HomeClienteWidgetState extends State<HomeClienteWidget> {
                           borderColor: FlutterFlowTheme.of(context).alternate,
                           borderWidth: 2.0,
                           borderRadius: 4.0,
-                          margin: const EdgeInsetsDirectional.fromSTEB(
+                          margin: EdgeInsetsDirectional.fromSTEB(
                               16.0, 4.0, 16.0, 4.0),
                           hidesUnderline: true,
                           isOverButton: true,
@@ -311,7 +316,7 @@ class _HomeClienteWidgetState extends State<HomeClienteWidget> {
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 0.0, 0.0),
                     child: Text(
                       'Cuidadores',
                       style: FlutterFlowTheme.of(context).labelMedium.override(
@@ -357,13 +362,13 @@ class _HomeClienteWidgetState extends State<HomeClienteWidget> {
                           .where((u) => u.uid != currentUserUid)
                           .toList();
                       if (listViewUsersRecordList.isEmpty) {
-                        return const Center(
+                        return Center(
                           child: EmptyWidget(),
                         );
                       }
 
                       return ListView.builder(
-                        padding: const EdgeInsets.fromLTRB(
+                        padding: EdgeInsets.fromLTRB(
                           0,
                           8.0,
                           0,
@@ -377,13 +382,13 @@ class _HomeClienteWidgetState extends State<HomeClienteWidget> {
                           final listViewUsersRecord =
                               listViewUsersRecordList[listViewIndex];
                           return Padding(
-                            padding: const EdgeInsets.all(14.0),
+                            padding: EdgeInsets.all(14.0),
                             child: Column(
                               mainAxisSize: MainAxisSize.min,
                               children: [
                                 SafeArea(
                                   child: Container(
-                                    decoration: const BoxDecoration(),
+                                    decoration: BoxDecoration(),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.min,
                                       crossAxisAlignment:
@@ -391,7 +396,7 @@ class _HomeClienteWidgetState extends State<HomeClienteWidget> {
                                       children: [
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(-1.0, -1.0),
+                                              AlignmentDirectional(-1.0, -1.0),
                                           child: Container(
                                             width: 109.0,
                                             height: 114.0,
@@ -406,7 +411,7 @@ class _HomeClienteWidgetState extends State<HomeClienteWidget> {
                                               ),
                                             ),
                                             child: Padding(
-                                              padding: const EdgeInsets.all(2.0),
+                                              padding: EdgeInsets.all(2.0),
                                               child: ClipRRect(
                                                 borderRadius:
                                                     BorderRadius.circular(4.0),
@@ -427,7 +432,7 @@ class _HomeClienteWidgetState extends State<HomeClienteWidget> {
                                         Expanded(
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     12.0, 0.0, 0.0, 0.0),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.min,
@@ -465,7 +470,7 @@ class _HomeClienteWidgetState extends State<HomeClienteWidget> {
                                                         text:
                                                             listViewUsersRecord
                                                                 .displayName,
-                                                        style: const TextStyle(),
+                                                        style: TextStyle(),
                                                       ),
                                                       TextSpan(
                                                         text: '\nIdade: ',
@@ -484,7 +489,7 @@ class _HomeClienteWidgetState extends State<HomeClienteWidget> {
                                                                             .dataNascimento)) +
                                                                 1)
                                                             .toString(),
-                                                        style: const TextStyle(),
+                                                        style: TextStyle(),
                                                       )
                                                     ],
                                                     style: FlutterFlowTheme.of(
@@ -533,7 +538,7 @@ class _HomeClienteWidgetState extends State<HomeClienteWidget> {
                                                                   .commaDecimal,
                                                           currency: 'R\$',
                                                         ),
-                                                        style: const TextStyle(),
+                                                        style: TextStyle(),
                                                       ),
                                                       TextSpan(
                                                         text: '\n12 horas: ',
@@ -556,7 +561,7 @@ class _HomeClienteWidgetState extends State<HomeClienteWidget> {
                                                                   .commaDecimal,
                                                           currency: 'R\$',
                                                         ),
-                                                        style: const TextStyle(),
+                                                        style: TextStyle(),
                                                       )
                                                     ],
                                                     style: FlutterFlowTheme.of(
@@ -605,7 +610,7 @@ class _HomeClienteWidgetState extends State<HomeClienteWidget> {
                                                                   .commaDecimal,
                                                           currency: 'R\$',
                                                         ),
-                                                        style: const TextStyle(),
+                                                        style: TextStyle(),
                                                       ),
                                                       TextSpan(
                                                         text:
@@ -629,7 +634,7 @@ class _HomeClienteWidgetState extends State<HomeClienteWidget> {
                                                                   .commaDecimal,
                                                           currency: 'R\$',
                                                         ),
-                                                        style: const TextStyle(),
+                                                        style: TextStyle(),
                                                       )
                                                     ],
                                                     style: FlutterFlowTheme.of(
@@ -663,10 +668,10 @@ class _HomeClienteWidgetState extends State<HomeClienteWidget> {
                                       text: 'Ver antecedentes',
                                       options: FFButtonOptions(
                                         height: 40.0,
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             12.0, 0.0, 12.0, 0.0),
                                         iconPadding:
-                                            const EdgeInsetsDirectional.fromSTEB(
+                                            EdgeInsetsDirectional.fromSTEB(
                                                 0.0, 0.0, 0.0, 0.0),
                                         color: FlutterFlowTheme.of(context)
                                             .primary,
@@ -679,7 +684,7 @@ class _HomeClienteWidgetState extends State<HomeClienteWidget> {
                                               letterSpacing: 0.0,
                                             ),
                                         elevation: 3.0,
-                                        borderSide: const BorderSide(
+                                        borderSide: BorderSide(
                                           color: Colors.transparent,
                                           width: 1.0,
                                         ),
@@ -694,19 +699,19 @@ class _HomeClienteWidgetState extends State<HomeClienteWidget> {
                                               'whatsapp://send?phone=55${functions.removeUnecessaryCaracteres(listViewUsersRecord.phoneNumber).toString()}');
                                         },
                                         text: 'Whatsapp',
-                                        icon: const FaIcon(
+                                        icon: FaIcon(
                                           FontAwesomeIcons.whatsapp,
                                           size: 15.0,
                                         ),
                                         options: FFButtonOptions(
                                           height: 40.0,
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   12.0, 0.0, 12.0, 0.0),
                                           iconPadding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 0.0),
-                                          color: const Color(0xFF24B000),
+                                          color: Color(0xFF24B000),
                                           textStyle:
                                               FlutterFlowTheme.of(context)
                                                   .titleSmall
@@ -717,7 +722,7 @@ class _HomeClienteWidgetState extends State<HomeClienteWidget> {
                                                     letterSpacing: 0.0,
                                                   ),
                                           elevation: 3.0,
-                                          borderSide: const BorderSide(
+                                          borderSide: BorderSide(
                                             color: Colors.transparent,
                                             width: 1.0,
                                           ),
@@ -726,9 +731,9 @@ class _HomeClienteWidgetState extends State<HomeClienteWidget> {
                                         ),
                                       ),
                                     ),
-                                  ].divide(const SizedBox(width: 7.0)),
+                                  ].divide(SizedBox(width: 7.0)),
                                 ),
-                              ].divide(const SizedBox(height: 8.0)),
+                              ].divide(SizedBox(height: 8.0)),
                             ),
                           );
                         },

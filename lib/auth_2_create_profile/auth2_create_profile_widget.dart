@@ -3,6 +3,7 @@ import '/components/edit_profile_auth2_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'auth2_create_profile_model.dart';
@@ -10,6 +11,9 @@ export 'auth2_create_profile_model.dart';
 
 class Auth2CreateProfileWidget extends StatefulWidget {
   const Auth2CreateProfileWidget({super.key});
+
+  static String routeName = 'auth_2_createProfile';
+  static String routePath = '/auth2CreateProfile';
 
   @override
   State<Auth2CreateProfileWidget> createState() =>
@@ -45,22 +49,22 @@ class _Auth2CreateProfileWidgetState extends State<Auth2CreateProfileWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 300.0.ms,
-            begin: const Offset(0.0, 140.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 140.0),
+            end: Offset(0.0, 0.0),
           ),
           ScaleEffect(
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 300.0.ms,
-            begin: const Offset(0.9, 0.9),
-            end: const Offset(1.0, 1.0),
+            begin: Offset(0.9, 0.9),
+            end: Offset(1.0, 1.0),
           ),
           TiltEffect(
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 300.0.ms,
-            begin: const Offset(-0.349, 0),
-            end: const Offset(0, 0),
+            begin: Offset(-0.349, 0),
+            end: Offset(0, 0),
           ),
         ],
       ),
@@ -101,7 +105,7 @@ class _Auth2CreateProfileWidgetState extends State<Auth2CreateProfileWidget>
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Padding(
-                  padding: const EdgeInsets.all(16.0),
+                  padding: EdgeInsets.all(16.0),
                   child: Material(
                     color: Colors.transparent,
                     elevation: 4.0,
@@ -110,12 +114,12 @@ class _Auth2CreateProfileWidgetState extends State<Auth2CreateProfileWidget>
                     ),
                     child: Container(
                       width: double.infinity,
-                      constraints: const BoxConstraints(
+                      constraints: BoxConstraints(
                         maxWidth: 570.0,
                       ),
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.of(context).secondaryBackground,
-                        boxShadow: const [
+                        boxShadow: [
                           BoxShadow(
                             blurRadius: 4.0,
                             color: Color(0x33000000),
@@ -128,7 +132,7 @@ class _Auth2CreateProfileWidgetState extends State<Auth2CreateProfileWidget>
                         borderRadius: BorderRadius.circular(12.0),
                       ),
                       child: Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
+                        padding: EdgeInsetsDirectional.fromSTEB(
                             0.0, 24.0, 0.0, 24.0),
                         child: wrapWithModel(
                           model: _model.editProfileAuth2Model,
@@ -138,7 +142,7 @@ class _Auth2CreateProfileWidgetState extends State<Auth2CreateProfileWidget>
                             confirmButtonText: 'Salvar',
                             usr: currentUserReference!,
                             navigateAction: () async {
-                              context.pushNamed('EuSou');
+                              context.pushNamed(EuSouWidget.routeName);
                             },
                           ),
                         ),

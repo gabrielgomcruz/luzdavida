@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/index.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -13,6 +14,9 @@ export 'unavailable_model.dart';
 
 class UnavailableWidget extends StatefulWidget {
   const UnavailableWidget({super.key});
+
+  static String routeName = 'unavailable';
+  static String routePath = '/unavailable';
 
   @override
   State<UnavailableWidget> createState() => _UnavailableWidgetState();
@@ -34,7 +38,7 @@ class _UnavailableWidgetState extends State<UnavailableWidget>
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       if (EuSou.Vendedor == EuSou.Vendedor) {
-        context.pushNamed('ProfileVendedor');
+        context.pushNamed(ProfileVendedorWidget.routeName);
       }
     });
 
@@ -54,8 +58,8 @@ class _UnavailableWidgetState extends State<UnavailableWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 400.0.ms,
-            begin: const Offset(3.0, 3.0),
-            end: const Offset(1.0, 1.0),
+            begin: Offset(3.0, 3.0),
+            end: Offset(1.0, 1.0),
           ),
         ],
       ),
@@ -74,8 +78,8 @@ class _UnavailableWidgetState extends State<UnavailableWidget>
             curve: Curves.easeInOut,
             delay: 400.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(0.0, 60.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 60.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -102,23 +106,23 @@ class _UnavailableWidgetState extends State<UnavailableWidget>
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
         body: Align(
-          alignment: const AlignmentDirectional(0.0, -1.0),
+          alignment: AlignmentDirectional(0.0, -1.0),
           child: Container(
             width: double.infinity,
-            constraints: const BoxConstraints(
+            constraints: BoxConstraints(
               maxWidth: 770.0,
             ),
             decoration: BoxDecoration(
               color: FlutterFlowTheme.of(context).secondaryBackground,
             ),
             child: Align(
-              alignment: const AlignmentDirectional(0.0, 1.0),
+              alignment: AlignmentDirectional(0.0, 1.0),
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  SizedBox(
+                  Container(
                     height: 173.0,
                     child: Stack(
                       children: [
@@ -127,7 +131,7 @@ class _UnavailableWidgetState extends State<UnavailableWidget>
                           elevation: 5.0,
                           child: Container(
                             width: double.infinity,
-                            decoration: const BoxDecoration(),
+                            decoration: BoxDecoration(),
                             child: ClipRRect(
                               borderRadius: BorderRadius.circular(8.0),
                               child: Image.asset(
@@ -139,7 +143,7 @@ class _UnavailableWidgetState extends State<UnavailableWidget>
                           ),
                         ),
                         Align(
-                          alignment: const AlignmentDirectional(0.0, 0.0),
+                          alignment: AlignmentDirectional(0.0, 0.0),
                           child: Container(
                             width: double.infinity,
                             height: double.infinity,
@@ -148,20 +152,20 @@ class _UnavailableWidgetState extends State<UnavailableWidget>
                                 colors: [
                                   FlutterFlowTheme.of(context)
                                       .secondaryBackground,
-                                  const Color(0x90FFFFFF)
+                                  Color(0x90FFFFFF)
                                 ],
-                                stops: const [0.0, 0.5],
-                                begin: const AlignmentDirectional(-1.0, -1.0),
-                                end: const AlignmentDirectional(1.0, 1.0),
+                                stops: [0.0, 0.5],
+                                begin: AlignmentDirectional(-1.0, -1.0),
+                                end: AlignmentDirectional(1.0, 1.0),
                               ),
                             ),
                           ).animateOnPageLoad(
                               animationsMap['containerOnPageLoadAnimation']!),
                         ),
                         Align(
-                          alignment: const AlignmentDirectional(-1.0, 1.0),
+                          alignment: AlignmentDirectional(-1.0, 1.0),
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 24.0, 0.0, 0.0, 0.0),
                             child: Container(
                               width: 90.0,
@@ -176,15 +180,15 @@ class _UnavailableWidgetState extends State<UnavailableWidget>
                                 ),
                               ),
                               child: Padding(
-                                padding: const EdgeInsets.all(4.0),
+                                padding: EdgeInsets.all(4.0),
                                 child: AuthUserStreamWidget(
                                   builder: (context) => ClipRRect(
                                     borderRadius: BorderRadius.circular(50.0),
                                     child: CachedNetworkImage(
                                       fadeInDuration:
-                                          const Duration(milliseconds: 500),
+                                          Duration(milliseconds: 500),
                                       fadeOutDuration:
-                                          const Duration(milliseconds: 500),
+                                          Duration(milliseconds: 500),
                                       imageUrl: valueOrDefault<String>(
                                         currentUserPhoto,
                                         'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/luz-da-vida-iym9jw/assets/p49dmi4023ud/ballon.png',
@@ -200,15 +204,15 @@ class _UnavailableWidgetState extends State<UnavailableWidget>
                           ),
                         ),
                         Align(
-                          alignment: const AlignmentDirectional(0.89, 0.2),
+                          alignment: AlignmentDirectional(0.89, 0.2),
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 5.0, 0.0, 0.0),
                             child: Image.asset(
                               'assets/images/Design_sem_nome_(3).png',
                               width: 88.0,
                               fit: BoxFit.contain,
-                              alignment: const Alignment(0.0, -1.0),
+                              alignment: Alignment(0.0, -1.0),
                             ),
                           ),
                         ),
@@ -217,7 +221,7 @@ class _UnavailableWidgetState extends State<UnavailableWidget>
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(24.0, 12.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(24.0, 12.0, 0.0, 0.0),
                     child: AuthUserStreamWidget(
                       builder: (context) => Text(
                         currentUserDisplayName,
@@ -231,7 +235,7 @@ class _UnavailableWidgetState extends State<UnavailableWidget>
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(24.0, 4.0, 0.0, 16.0),
+                        EdgeInsetsDirectional.fromSTEB(24.0, 4.0, 0.0, 16.0),
                     child: Text(
                       valueOrDefault<String>(
                         currentUserEmail,
@@ -246,7 +250,7 @@ class _UnavailableWidgetState extends State<UnavailableWidget>
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(24.0, 4.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(24.0, 4.0, 0.0, 0.0),
                     child: Text(
                       'Minha conta',
                       style: FlutterFlowTheme.of(context).labelMedium.override(
@@ -257,14 +261,14 @@ class _UnavailableWidgetState extends State<UnavailableWidget>
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 0.0),
                     child: InkWell(
                       splashColor: Colors.transparent,
                       focusColor: Colors.transparent,
                       hoverColor: Colors.transparent,
                       highlightColor: Colors.transparent,
                       onTap: () async {
-                        context.pushNamed('auth_2_EditProfile');
+                        context.pushNamed(Auth2EditProfileWidget.routeName);
                       },
                       child: Container(
                         width: double.infinity,
@@ -272,7 +276,7 @@ class _UnavailableWidgetState extends State<UnavailableWidget>
                         decoration: BoxDecoration(
                           color:
                               FlutterFlowTheme.of(context).secondaryBackground,
-                          boxShadow: const [
+                          boxShadow: [
                             BoxShadow(
                               blurRadius: 3.0,
                               color: Color(0x33000000),
@@ -290,7 +294,7 @@ class _UnavailableWidgetState extends State<UnavailableWidget>
                           ),
                         ),
                         child: Padding(
-                          padding: const EdgeInsets.all(12.0),
+                          padding: EdgeInsets.all(12.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             children: [
@@ -301,7 +305,7 @@ class _UnavailableWidgetState extends State<UnavailableWidget>
                                 size: 24.0,
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     12.0, 0.0, 0.0, 0.0),
                                 child: Text(
                                   'Editar perfil',
@@ -315,7 +319,7 @@ class _UnavailableWidgetState extends State<UnavailableWidget>
                               ),
                               Expanded(
                                 child: Align(
-                                  alignment: const AlignmentDirectional(0.9, 0.0),
+                                  alignment: AlignmentDirectional(0.9, 0.0),
                                   child: Icon(
                                     Icons.arrow_forward_ios,
                                     color: FlutterFlowTheme.of(context)
@@ -332,7 +336,7 @@ class _UnavailableWidgetState extends State<UnavailableWidget>
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(24.0, 16.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(24.0, 16.0, 0.0, 0.0),
                     child: Text(
                       'Configurações do app',
                       style: FlutterFlowTheme.of(context).labelMedium.override(
@@ -343,13 +347,13 @@ class _UnavailableWidgetState extends State<UnavailableWidget>
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 0.0),
                     child: Container(
                       width: double.infinity,
                       height: 60.0,
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.of(context).secondaryBackground,
-                        boxShadow: const [
+                        boxShadow: [
                           BoxShadow(
                             blurRadius: 3.0,
                             color: Color(0x33000000),
@@ -367,7 +371,7 @@ class _UnavailableWidgetState extends State<UnavailableWidget>
                         ),
                       ),
                       child: Padding(
-                        padding: const EdgeInsets.all(12.0),
+                        padding: EdgeInsets.all(12.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           children: [
@@ -377,7 +381,7 @@ class _UnavailableWidgetState extends State<UnavailableWidget>
                               size: 24.0,
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   12.0, 0.0, 0.0, 0.0),
                               child: Text(
                                 'Suporte',
@@ -391,7 +395,7 @@ class _UnavailableWidgetState extends State<UnavailableWidget>
                             ),
                             Expanded(
                               child: Align(
-                                alignment: const AlignmentDirectional(0.9, 0.0),
+                                alignment: AlignmentDirectional(0.9, 0.0),
                                 child: Icon(
                                   Icons.arrow_forward_ios,
                                   color: FlutterFlowTheme.of(context)
@@ -407,13 +411,13 @@ class _UnavailableWidgetState extends State<UnavailableWidget>
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 0.0),
                     child: Container(
                       width: double.infinity,
                       height: 60.0,
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.of(context).secondaryBackground,
-                        boxShadow: const [
+                        boxShadow: [
                           BoxShadow(
                             blurRadius: 3.0,
                             color: Color(0x33000000),
@@ -431,7 +435,7 @@ class _UnavailableWidgetState extends State<UnavailableWidget>
                         ),
                       ),
                       child: Padding(
-                        padding: const EdgeInsets.all(12.0),
+                        padding: EdgeInsets.all(12.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           children: [
@@ -441,7 +445,7 @@ class _UnavailableWidgetState extends State<UnavailableWidget>
                               size: 24.0,
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   12.0, 0.0, 0.0, 0.0),
                               child: Text(
                                 'Termos de serviço',
@@ -455,7 +459,7 @@ class _UnavailableWidgetState extends State<UnavailableWidget>
                             ),
                             Expanded(
                               child: Align(
-                                alignment: const AlignmentDirectional(0.9, 0.0),
+                                alignment: AlignmentDirectional(0.9, 0.0),
                                 child: Icon(
                                   Icons.arrow_forward_ios,
                                   color: FlutterFlowTheme.of(context)
@@ -471,31 +475,31 @@ class _UnavailableWidgetState extends State<UnavailableWidget>
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 0.0),
                     child: InkWell(
                       splashColor: Colors.transparent,
                       focusColor: Colors.transparent,
                       hoverColor: Colors.transparent,
                       highlightColor: Colors.transparent,
                       onTap: () async {
-                        navigate() {}
+                        Function() _navigate = () {};
                         var confirmDialogResponse = await showDialog<bool>(
                               context: context,
                               builder: (alertDialogContext) {
                                 return AlertDialog(
-                                  title: const Text('Deseja excluir sua conta?'),
-                                  content: const Text(
+                                  title: Text('Deseja excluir sua conta?'),
+                                  content: Text(
                                       'Essa ação não poderá ser restaurada, tem certeza de que quer prosseguir?'),
                                   actions: [
                                     TextButton(
                                       onPressed: () => Navigator.pop(
                                           alertDialogContext, false),
-                                      child: const Text('Voltar'),
+                                      child: Text('Voltar'),
                                     ),
                                     TextButton(
                                       onPressed: () => Navigator.pop(
                                           alertDialogContext, true),
-                                      child: const Text('Excluir minha conta'),
+                                      child: Text('Excluir minha conta'),
                                     ),
                                   ],
                                 );
@@ -506,7 +510,7 @@ class _UnavailableWidgetState extends State<UnavailableWidget>
                           await authManager.deleteUser(context);
                         }
 
-                        navigate();
+                        _navigate();
                       },
                       child: Container(
                         width: double.infinity,
@@ -514,7 +518,7 @@ class _UnavailableWidgetState extends State<UnavailableWidget>
                         decoration: BoxDecoration(
                           color:
                               FlutterFlowTheme.of(context).secondaryBackground,
-                          boxShadow: const [
+                          boxShadow: [
                             BoxShadow(
                               blurRadius: 3.0,
                               color: Color(0x33000000),
@@ -532,7 +536,7 @@ class _UnavailableWidgetState extends State<UnavailableWidget>
                           ),
                         ),
                         child: Padding(
-                          padding: const EdgeInsets.all(12.0),
+                          padding: EdgeInsets.all(12.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             children: [
@@ -543,7 +547,7 @@ class _UnavailableWidgetState extends State<UnavailableWidget>
                                 size: 24.0,
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     12.0, 0.0, 0.0, 0.0),
                                 child: Text(
                                   'Excluir minha conta para sempre',
@@ -557,7 +561,7 @@ class _UnavailableWidgetState extends State<UnavailableWidget>
                               ),
                               Expanded(
                                 child: Align(
-                                  alignment: const AlignmentDirectional(0.9, 0.0),
+                                  alignment: AlignmentDirectional(0.9, 0.0),
                                   child: Icon(
                                     Icons.arrow_forward_ios,
                                     color: FlutterFlowTheme.of(context)
@@ -574,10 +578,10 @@ class _UnavailableWidgetState extends State<UnavailableWidget>
                   ),
                   Expanded(
                     child: Align(
-                      alignment: const AlignmentDirectional(0.0, 0.0),
+                      alignment: AlignmentDirectional(0.0, 0.0),
                       child: Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
                         child: FFButtonWidget(
                           onPressed: () async {
                             GoRouter.of(context).prepareAuthEvent();
@@ -585,19 +589,19 @@ class _UnavailableWidgetState extends State<UnavailableWidget>
                             GoRouter.of(context).clearRedirectLocation();
 
                             context.goNamedAuth(
-                                'auth_2_Login', context.mounted);
+                                Auth2LoginWidget.routeName, context.mounted);
                           },
                           text: 'Sair da conta',
-                          icon: const Icon(
+                          icon: Icon(
                             Icons.logout_outlined,
                             size: 15.0,
                           ),
                           options: FFButtonOptions(
                             width: 189.0,
                             height: 44.0,
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
-                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                            iconPadding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
                             color: FlutterFlowTheme.of(context)
                                 .secondaryBackground,

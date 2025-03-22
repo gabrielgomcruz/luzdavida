@@ -24,15 +24,15 @@ class PixMPCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "description": "$description",
-  "transaction_amount": $transactionAmount,
-  "payment_method_id": "$paymentMethodId",
+  "description": "${description}",
+  "transaction_amount": ${transactionAmount},
+  "payment_method_id": "${paymentMethodId}",
   "payer": {
-    "email": "$email",
-    "first_name": "$firstName",
+    "email": "${email}",
+    "first_name": "${firstName}",
     "identification": {
       "type": "CPF",
-      "number": "$numberCpf"
+      "number": "${numberCpf}"
     }
   }
 }''';
@@ -41,9 +41,9 @@ class PixMPCall {
       apiUrl: 'https://api.mercadopago.com/v1/payments',
       callType: ApiCallType.POST,
       headers: {
-        'Authorization': 'Bearer $accessToken',
+        'Authorization': 'Bearer ${accessToken}',
         'Content-Type': 'application/json',
-        'X-Idempotency-Key': '$idTransacao',
+        'X-Idempotency-Key': '${idTransacao}',
       },
       params: {},
       body: ffApiRequestBody,
@@ -89,22 +89,22 @@ class CriarTokenCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "card_number": "$cardNumber",
+  "card_number": "${cardNumber}",
   "cardholder": {
-    "name": "$cardholderName",
+    "name": "${cardholderName}",
     "identification": {
-      "type": "$identificationType",
-      "number": "$identificationNumber"
+      "type": "${identificationType}",
+      "number": "${identificationNumber}"
     }
   },
-  "security_code": "$securityCode",
-  "expiration_month": "$cardExpirationMonth",
-  "expiration_year": "$cardExpirationYear"
+  "security_code": "${securityCode}",
+  "expiration_month": "${cardExpirationMonth}",
+  "expiration_year": "${cardExpirationYear}"
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'Criar Token',
       apiUrl:
-          'https://api.mercadopago.com/v1/card_tokens?public_key=$publicKey',
+          'https://api.mercadopago.com/v1/card_tokens?public_key=${publicKey}',
       callType: ApiCallType.POST,
       headers: {
         'Authorization':
@@ -151,28 +151,28 @@ class PagamentoCartaoMPCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "transaction_amount": $transactionAmount,
-  "token": "$token",
-  "installments": $installments,
+  "transaction_amount": ${transactionAmount},
+  "token": "${token}",
+  "installments": ${installments},
   "payer": {
-    "first_name": "$firstName",
-    "last_name": "$lastName",
-    "email": "$email",
+    "first_name": "${firstName}",
+    "last_name": "${lastName}",
+    "email": "${email}",
     "type": "customer",
     "identification": {
-      "type": "$identificationType",
-      "number": "$identificationNumber"
+      "type": "${identificationType}",
+      "number": "${identificationNumber}"
     },
     "address": {
-      "zip_code": "$zipCode",
-      "street_name": "$streetName",
-      "street_number": "$streetNumber",
-      "neighborhood": "$neighborhood",
-      "city": "$city",
-      "federal_unit": "$federalUnit"
+      "zip_code": "${zipCode}",
+      "street_name": "${streetName}",
+      "street_number": "${streetNumber}",
+      "neighborhood": "${neighborhood}",
+      "city": "${city}",
+      "federal_unit": "${federalUnit}"
     }
   },
-  "description": "$description"
+  "description": "${description}"
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'Pagamento Cartao MP',
@@ -182,7 +182,7 @@ class PagamentoCartaoMPCall {
         'Authorization':
             'Bearer APP_USR-4068040856371180-042421-f433eb87c4d587d439a85cb81edb4906-1785822096',
         'Content-Type': 'application/json',
-        'X-Idempotency-Key': '$idTransacao',
+        'X-Idempotency-Key': '${idTransacao}',
       },
       params: {},
       body: ffApiRequestBody,
@@ -205,10 +205,10 @@ class StatusPixMPCall {
   }) async {
     return ApiManager.instance.makeApiCall(
       callName: 'Status Pix MP',
-      apiUrl: 'https://api.mercadopago.com/v1/payments/$idPix',
+      apiUrl: 'https://api.mercadopago.com/v1/payments/${idPix}',
       callType: ApiCallType.GET,
       headers: {
-        'Authorization': 'Bearer $accessToken',
+        'Authorization': 'Bearer ${accessToken}',
       },
       params: {},
       returnBody: true,

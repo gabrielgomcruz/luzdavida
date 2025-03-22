@@ -1,5 +1,6 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -11,7 +12,7 @@ class MenuVendedorWidget extends StatefulWidget {
   const MenuVendedorWidget({
     super.key,
     int? nmenu,
-  }) : nmenu = nmenu ?? 1;
+  }) : this.nmenu = nmenu ?? 1;
 
   final int nmenu;
 
@@ -48,7 +49,7 @@ class _MenuVendedorWidgetState extends State<MenuVendedorWidget> {
     context.watch<FFAppState>();
 
     return Padding(
-      padding: const EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 15.0),
+      padding: EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 15.0),
       child: Material(
         color: Colors.transparent,
         elevation: 11.0,
@@ -73,13 +74,13 @@ class _MenuVendedorWidgetState extends State<MenuVendedorWidget> {
                 hoverColor: Colors.transparent,
                 highlightColor: Colors.transparent,
                 onTap: () async {
-                  context.pushNamed('ProfileVendedor');
+                  context.pushNamed(ProfileVendedorWidget.routeName);
 
                   FFAppState().pageNumber = 1;
                   safeSetState(() {});
                 },
                 child: Container(
-                  decoration: const BoxDecoration(),
+                  decoration: BoxDecoration(),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -88,7 +89,7 @@ class _MenuVendedorWidgetState extends State<MenuVendedorWidget> {
                         Icons.space_dashboard_rounded,
                         color: colorFromCssString(
                           FFAppState().pageNumber == 1 ? '#303825' : '#313234',
-                          defaultColor: const Color(0xFF313234),
+                          defaultColor: Color(0xFF313234),
                         ),
                         size: 22.0,
                       ),
@@ -107,7 +108,7 @@ class _MenuVendedorWidgetState extends State<MenuVendedorWidget> {
                               fontWeight: FontWeight.w600,
                             ),
                       ),
-                    ].divide(const SizedBox(height: 5.0)),
+                    ].divide(SizedBox(height: 5.0)),
                   ),
                 ),
               ),
@@ -120,10 +121,10 @@ class _MenuVendedorWidgetState extends State<MenuVendedorWidget> {
                   FFAppState().pageNumber = 2;
                   safeSetState(() {});
 
-                  context.pushNamed('plano');
+                  context.pushNamed(PlanoWidget.routeName);
                 },
                 child: Container(
-                  decoration: const BoxDecoration(),
+                  decoration: BoxDecoration(),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -151,7 +152,7 @@ class _MenuVendedorWidgetState extends State<MenuVendedorWidget> {
                               fontWeight: FontWeight.w600,
                             ),
                       ),
-                    ].divide(const SizedBox(height: 5.0)),
+                    ].divide(SizedBox(height: 5.0)),
                   ),
                 ),
               ),
@@ -161,13 +162,13 @@ class _MenuVendedorWidgetState extends State<MenuVendedorWidget> {
                 hoverColor: Colors.transparent,
                 highlightColor: Colors.transparent,
                 onTap: () async {
-                  context.pushNamed('auth_2_EditProfile');
+                  context.pushNamed(Auth2EditProfileWidget.routeName);
 
                   FFAppState().pageNumber = 3;
                   safeSetState(() {});
                 },
                 child: Container(
-                  decoration: const BoxDecoration(),
+                  decoration: BoxDecoration(),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -176,7 +177,7 @@ class _MenuVendedorWidgetState extends State<MenuVendedorWidget> {
                         Icons.face,
                         color: colorFromCssString(
                           FFAppState().pageNumber == 3 ? '#303825' : '#313234',
-                          defaultColor: const Color(0xFF313234),
+                          defaultColor: Color(0xFF313234),
                         ),
                         size: 22.0,
                       ),
@@ -189,13 +190,13 @@ class _MenuVendedorWidgetState extends State<MenuVendedorWidget> {
                                 FFAppState().pageNumber == 3
                                     ? '#303825'
                                     : '#313234',
-                                defaultColor: const Color(0xFF313234),
+                                defaultColor: Color(0xFF313234),
                               ),
                               letterSpacing: 0.0,
                               fontWeight: FontWeight.w600,
                             ),
                       ),
-                    ].divide(const SizedBox(height: 5.0)),
+                    ].divide(SizedBox(height: 5.0)),
                   ),
                 ),
               ),

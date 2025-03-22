@@ -2,6 +2,7 @@ import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'sucesso_model.dart';
@@ -9,6 +10,9 @@ export 'sucesso_model.dart';
 
 class SucessoWidget extends StatefulWidget {
   const SucessoWidget({super.key});
+
+  static String routeName = 'sucesso';
+  static String routePath = '/sucesso';
 
   @override
   State<SucessoWidget> createState() => _SucessoWidgetState();
@@ -43,15 +47,15 @@ class _SucessoWidgetState extends State<SucessoWidget>
             curve: Curves.easeInOut,
             delay: 150.0.ms,
             duration: 300.0.ms,
-            begin: const Offset(0.8, 0.8),
-            end: const Offset(1.0, 1.0),
+            begin: Offset(0.8, 0.8),
+            end: Offset(1.0, 1.0),
           ),
           MoveEffect(
             curve: Curves.easeInOut,
             delay: 150.0.ms,
             duration: 300.0.ms,
-            begin: const Offset(0.0, 40.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 40.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -70,15 +74,15 @@ class _SucessoWidgetState extends State<SucessoWidget>
             curve: Curves.easeInOut,
             delay: 250.0.ms,
             duration: 300.0.ms,
-            begin: const Offset(0.8, 0.8),
-            end: const Offset(1.0, 1.0),
+            begin: Offset(0.8, 0.8),
+            end: Offset(1.0, 1.0),
           ),
           MoveEffect(
             curve: Curves.easeInOut,
             delay: 250.0.ms,
             duration: 300.0.ms,
-            begin: const Offset(0.0, 40.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 40.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -110,7 +114,7 @@ class _SucessoWidgetState extends State<SucessoWidget>
             mainAxisSize: MainAxisSize.max,
             children: [
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 70.0),
+                padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 70.0),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -132,7 +136,7 @@ class _SucessoWidgetState extends State<SucessoWidget>
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
                       child: Text(
                         'Plano atualizado com Sucesso !',
                         textAlign: TextAlign.center,
@@ -149,13 +153,13 @@ class _SucessoWidgetState extends State<SucessoWidget>
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
                       child: FFButtonWidget(
                         onPressed: () async {
                           context.pushNamed(
-                            'servicosQueOfereco',
+                            ServicosQueOferecoWidget.routeName,
                             extra: <String, dynamic>{
-                              kTransitionInfoKey: const TransitionInfo(
+                              kTransitionInfoKey: TransitionInfo(
                                 hasTransition: true,
                                 transitionType: PageTransitionType.bottomToTop,
                                 duration: Duration(milliseconds: 300),
@@ -167,9 +171,9 @@ class _SucessoWidgetState extends State<SucessoWidget>
                         options: FFButtonOptions(
                           width: 230.0,
                           height: 60.0,
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
-                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                          iconPadding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
                           color: FlutterFlowTheme.of(context).inputBackground,
                           textStyle:
@@ -179,7 +183,7 @@ class _SucessoWidgetState extends State<SucessoWidget>
                                     fontWeight: FontWeight.w600,
                                   ),
                           elevation: 0.0,
-                          borderSide: const BorderSide(
+                          borderSide: BorderSide(
                             color: Colors.transparent,
                             width: 1.0,
                           ),
@@ -188,7 +192,7 @@ class _SucessoWidgetState extends State<SucessoWidget>
                       ).animateOnPageLoad(
                           animationsMap['buttonOnPageLoadAnimation']!),
                     ),
-                  ].divide(const SizedBox(height: 15.0)),
+                  ].divide(SizedBox(height: 15.0)),
                 ),
               ),
             ],

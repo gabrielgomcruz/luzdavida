@@ -10,7 +10,7 @@ class CidadesDisponveisTable extends SupabaseTable<CidadesDisponveisRow> {
 }
 
 class CidadesDisponveisRow extends SupabaseDataRow {
-  CidadesDisponveisRow(super.data);
+  CidadesDisponveisRow(Map<String, dynamic> data) : super(data);
 
   @override
   SupabaseTable get table => CidadesDisponveisTable();

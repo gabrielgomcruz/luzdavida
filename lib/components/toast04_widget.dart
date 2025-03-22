@@ -1,5 +1,6 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'toast04_model.dart';
 export 'toast04_model.dart';
@@ -43,13 +44,13 @@ class _Toast04WidgetState extends State<Toast04Widget> {
       hoverColor: Colors.transparent,
       highlightColor: Colors.transparent,
       onTap: () async {
-        context.pushNamed('plano');
+        context.pushNamed(PlanoWidget.routeName);
       },
       child: Container(
         width: 400.0,
         decoration: BoxDecoration(
-          color: const Color(0xFFD03E3E),
-          boxShadow: const [
+          color: Color(0xFFD03E3E),
+          boxShadow: [
             BoxShadow(
               blurRadius: 4.0,
               color: Color(0x33000000),
@@ -61,11 +62,11 @@ class _Toast04WidgetState extends State<Toast04Widget> {
           ],
           borderRadius: BorderRadius.circular(12.0),
           border: Border.all(
-            color: const Color(0x9AFFFFFF),
+            color: Color(0x9AFFFFFF),
           ),
         ),
         child: Padding(
-          padding: const EdgeInsetsDirectional.fromSTEB(12.0, 8.0, 12.0, 8.0),
+          padding: EdgeInsetsDirectional.fromSTEB(12.0, 8.0, 12.0, 8.0),
           child: Row(
             mainAxisSize: MainAxisSize.max,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -79,7 +80,7 @@ class _Toast04WidgetState extends State<Toast04Widget> {
                     Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
-                        const Padding(
+                        Padding(
                           padding: EdgeInsets.all(4.0),
                           child: Icon(
                             Icons.warning_rounded,
@@ -98,22 +99,22 @@ class _Toast04WidgetState extends State<Toast04Widget> {
                                     fontWeight: FontWeight.w500,
                                   ),
                         ),
-                      ].divide(const SizedBox(width: 8.0)),
+                      ].divide(SizedBox(width: 8.0)),
                     ),
                     Text(
                       'Para divulgarmos seu perfil, é necessário que você escolha seu plano.',
                       style: FlutterFlowTheme.of(context).labelMedium.override(
                             fontFamily: 'Figtree',
-                            color: const Color(0x9AFFFFFF),
+                            color: Color(0x9AFFFFFF),
                             fontSize: 14.0,
                             letterSpacing: 0.0,
                             fontWeight: FontWeight.w500,
                           ),
                     ),
-                  ].divide(const SizedBox(height: 4.0)),
+                  ].divide(SizedBox(height: 4.0)),
                 ),
               ),
-            ].divide(const SizedBox(width: 8.0)),
+            ].divide(SizedBox(width: 8.0)),
           ),
         ),
       ),

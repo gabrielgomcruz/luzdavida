@@ -9,7 +9,7 @@ class EsteiraDePixTable extends SupabaseTable<EsteiraDePixRow> {
 }
 
 class EsteiraDePixRow extends SupabaseDataRow {
-  EsteiraDePixRow(super.data);
+  EsteiraDePixRow(Map<String, dynamic> data) : super(data);
 
   @override
   SupabaseTable get table => EsteiraDePixTable();

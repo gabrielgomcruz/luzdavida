@@ -11,7 +11,7 @@ class CartProductWidget extends StatefulWidget {
     super.key,
     required this.product,
     bool? cartItem,
-  }) : cartItem = cartItem ?? true;
+  }) : this.cartItem = cartItem ?? true;
 
   final DocumentReference? product;
   final bool cartItem;
@@ -47,7 +47,7 @@ class _CartProductWidgetState extends State<CartProductWidget> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
+      padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
       child: FutureBuilder<ProductsRecord>(
         future: ProductsRecord.getDocumentOnce(widget.product!),
         builder: (context, snapshot) {
@@ -76,7 +76,7 @@ class _CartProductWidgetState extends State<CartProductWidget> {
                 BoxShadow(
                   blurRadius: 0.0,
                   color: FlutterFlowTheme.of(context).alternate,
-                  offset: const Offset(
+                  offset: Offset(
                     0.0,
                     1.0,
                   ),
@@ -90,19 +90,19 @@ class _CartProductWidgetState extends State<CartProductWidget> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 4.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 4.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 1.0, 1.0, 1.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 1.0, 1.0, 1.0),
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(12.0),
                           child: CachedNetworkImage(
-                            fadeInDuration: const Duration(milliseconds: 500),
-                            fadeOutDuration: const Duration(milliseconds: 500),
+                            fadeInDuration: Duration(milliseconds: 500),
+                            fadeOutDuration: Duration(milliseconds: 500),
                             imageUrl: valueOrDefault<String>(
                               menuItemProductsRecord.coverImage,
                               'https://static.nike.com/a/images/t_prod_ss/w_640,c_limit,f_auto/95c8dcbe-3d3f-46a9-9887-43161ef949c5/sleepers-of-the-week-release-date.jpg',
@@ -130,7 +130,7 @@ class _CartProductWidgetState extends State<CartProductWidget> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(15.0, 0.0, 0.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(15.0, 0.0, 0.0, 0.0),
                   child: Text(
                     valueOrDefault<String>(
                       formatNumber(
@@ -149,7 +149,7 @@ class _CartProductWidgetState extends State<CartProductWidget> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(15.0, 10.0, 0.0, 5.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(15.0, 10.0, 0.0, 5.0),
                   child: Text(
                     menuItemProductsRecord.categoria,
                     textAlign: TextAlign.end,
@@ -191,9 +191,9 @@ class _CartProductWidgetState extends State<CartProductWidget> {
                             : null;
 
                     return Container(
-                      decoration: const BoxDecoration(),
+                      decoration: BoxDecoration(),
                       child: Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
+                        padding: EdgeInsetsDirectional.fromSTEB(
                             15.0, 0.0, 0.0, 15.0),
                         child: Text(
                           valueOrDefault<String>(

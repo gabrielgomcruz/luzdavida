@@ -1,5 +1,6 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -11,7 +12,7 @@ class MenuCompradorWidget extends StatefulWidget {
   const MenuCompradorWidget({
     super.key,
     int? nmenu,
-  }) : nmenu = nmenu ?? 1;
+  }) : this.nmenu = nmenu ?? 1;
 
   final int nmenu;
 
@@ -48,7 +49,7 @@ class _MenuCompradorWidgetState extends State<MenuCompradorWidget> {
     context.watch<FFAppState>();
 
     return Padding(
-      padding: const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 20.0),
+      padding: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 20.0),
       child: Material(
         color: Colors.transparent,
         elevation: 5.0,
@@ -77,7 +78,7 @@ class _MenuCompradorWidgetState extends State<MenuCompradorWidget> {
                   safeSetState(() {});
                 },
                 child: Container(
-                  decoration: const BoxDecoration(),
+                  decoration: BoxDecoration(),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -86,7 +87,7 @@ class _MenuCompradorWidgetState extends State<MenuCompradorWidget> {
                         Icons.space_dashboard_rounded,
                         color: colorFromCssString(
                           FFAppState().pageNumber == 1 ? '#FB6610' : '#313234',
-                          defaultColor: const Color(0xFF313234),
+                          defaultColor: Color(0xFF313234),
                         ),
                         size: 22.0,
                       ),
@@ -105,7 +106,7 @@ class _MenuCompradorWidgetState extends State<MenuCompradorWidget> {
                               fontWeight: FontWeight.w600,
                             ),
                       ),
-                    ].divide(const SizedBox(height: 5.0)),
+                    ].divide(SizedBox(height: 5.0)),
                   ),
                 ),
               ),
@@ -119,7 +120,7 @@ class _MenuCompradorWidgetState extends State<MenuCompradorWidget> {
                   safeSetState(() {});
                 },
                 child: Container(
-                  decoration: const BoxDecoration(),
+                  decoration: BoxDecoration(),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -128,7 +129,7 @@ class _MenuCompradorWidgetState extends State<MenuCompradorWidget> {
                         FontAwesomeIcons.umbrellaBeach,
                         color: colorFromCssString(
                           FFAppState().pageNumber == 2 ? '#FB6610' : '#313234',
-                          defaultColor: const Color(0xFF313234),
+                          defaultColor: Color(0xFF313234),
                         ),
                         size: 22.0,
                       ),
@@ -147,7 +148,7 @@ class _MenuCompradorWidgetState extends State<MenuCompradorWidget> {
                               fontWeight: FontWeight.w600,
                             ),
                       ),
-                    ].divide(const SizedBox(height: 5.0)),
+                    ].divide(SizedBox(height: 5.0)),
                   ),
                 ),
               ),
@@ -161,7 +162,7 @@ class _MenuCompradorWidgetState extends State<MenuCompradorWidget> {
                   safeSetState(() {});
                 },
                 child: Container(
-                  decoration: const BoxDecoration(),
+                  decoration: BoxDecoration(),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -170,7 +171,7 @@ class _MenuCompradorWidgetState extends State<MenuCompradorWidget> {
                         FontAwesomeIcons.cocktail,
                         color: colorFromCssString(
                           FFAppState().pageNumber == 3 ? '#FB6610' : '#313234',
-                          defaultColor: const Color(0xFF313234),
+                          defaultColor: Color(0xFF313234),
                         ),
                         size: 22.0,
                       ),
@@ -189,7 +190,7 @@ class _MenuCompradorWidgetState extends State<MenuCompradorWidget> {
                               fontWeight: FontWeight.w600,
                             ),
                       ),
-                    ].divide(const SizedBox(height: 5.0)),
+                    ].divide(SizedBox(height: 5.0)),
                   ),
                 ),
               ),
@@ -199,13 +200,13 @@ class _MenuCompradorWidgetState extends State<MenuCompradorWidget> {
                 hoverColor: Colors.transparent,
                 highlightColor: Colors.transparent,
                 onTap: () async {
-                  context.goNamed('unavailable');
+                  context.goNamed(UnavailableWidget.routeName);
 
                   FFAppState().pageNumber = 4;
                   safeSetState(() {});
                 },
                 child: Container(
-                  decoration: const BoxDecoration(),
+                  decoration: BoxDecoration(),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -214,7 +215,7 @@ class _MenuCompradorWidgetState extends State<MenuCompradorWidget> {
                         Icons.face,
                         color: colorFromCssString(
                           FFAppState().pageNumber == 4 ? '#FB6610' : '#313234',
-                          defaultColor: const Color(0xFF313234),
+                          defaultColor: Color(0xFF313234),
                         ),
                         size: 22.0,
                       ),
@@ -227,13 +228,13 @@ class _MenuCompradorWidgetState extends State<MenuCompradorWidget> {
                                 FFAppState().pageNumber == 4
                                     ? '#FB6610'
                                     : '#313234',
-                                defaultColor: const Color(0xFF313234),
+                                defaultColor: Color(0xFF313234),
                               ),
                               letterSpacing: 0.0,
                               fontWeight: FontWeight.w600,
                             ),
                       ),
-                    ].divide(const SizedBox(height: 5.0)),
+                    ].divide(SizedBox(height: 5.0)),
                   ),
                 ),
               ),

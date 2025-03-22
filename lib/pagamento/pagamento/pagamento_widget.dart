@@ -8,6 +8,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
 import '/flutter_flow/random_data_util.dart' as random_data;
+import '/index.dart';
 import 'package:barcode_widget/barcode_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -18,6 +19,9 @@ export 'pagamento_model.dart';
 
 class PagamentoWidget extends StatefulWidget {
   const PagamentoWidget({super.key});
+
+  static String routeName = 'Pagamento';
+  static String routePath = '/pagamento';
 
   @override
   State<PagamentoWidget> createState() => _PagamentoWidgetState();
@@ -79,7 +83,7 @@ class _PagamentoWidgetState extends State<PagamentoWidget>
       },
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: const Color(0xFFEBEBEB),
+        backgroundColor: Color(0xFFEBEBEB),
         appBar: AppBar(
           backgroundColor: FlutterFlowTheme.of(context).primary,
           automaticallyImplyLeading: false,
@@ -88,7 +92,7 @@ class _PagamentoWidgetState extends State<PagamentoWidget>
             borderRadius: 30.0,
             borderWidth: 1.0,
             buttonSize: 60.0,
-            icon: const Icon(
+            icon: Icon(
               Icons.arrow_back_rounded,
               color: Colors.white,
               size: 30.0,
@@ -106,14 +110,14 @@ class _PagamentoWidgetState extends State<PagamentoWidget>
                   letterSpacing: 0.0,
                 ),
           ),
-          actions: const [],
+          actions: [],
           centerTitle: false,
           elevation: 2.0,
         ),
         body: SafeArea(
           top: true,
           child: Align(
-            alignment: const AlignmentDirectional(0.0, -1.0),
+            alignment: AlignmentDirectional(0.0, -1.0),
             child: Column(
               children: [
                 Expanded(
@@ -122,18 +126,18 @@ class _PagamentoWidgetState extends State<PagamentoWidget>
                     physics: const NeverScrollableScrollPhysics(),
                     children: [
                       Align(
-                        alignment: const AlignmentDirectional(0.0, -1.0),
+                        alignment: AlignmentDirectional(0.0, -1.0),
                         child: Padding(
-                          padding: const EdgeInsets.all(15.0),
+                          padding: EdgeInsets.all(15.0),
                           child: Container(
                             decoration: BoxDecoration(
                               color: Colors.white,
                               borderRadius: BorderRadius.circular(12.0),
                             ),
                             child: Padding(
-                              padding: const EdgeInsets.all(18.0),
+                              padding: EdgeInsets.all(18.0),
                               child: Container(
-                                decoration: const BoxDecoration(),
+                                decoration: BoxDecoration(),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.min,
                                   children: [
@@ -173,7 +177,7 @@ class _PagamentoWidgetState extends State<PagamentoWidget>
                                               .bodyMedium
                                               .override(
                                                 fontFamily: 'Inter Tight',
-                                                color: const Color(0xFF00A78B),
+                                                color: Color(0xFF00A78B),
                                                 fontSize: 20.0,
                                                 letterSpacing: 1.0,
                                                 fontWeight: FontWeight.bold,
@@ -181,7 +185,7 @@ class _PagamentoWidgetState extends State<PagamentoWidget>
                                         ),
                                       ],
                                     ),
-                                    const Divider(
+                                    Divider(
                                       thickness: 1.0,
                                       color: Color(0x1F000000),
                                     ),
@@ -190,7 +194,7 @@ class _PagamentoWidgetState extends State<PagamentoWidget>
                                       children: [
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 5.0),
                                           child: Text(
                                             'Escolha seu método de pagamento',
@@ -226,7 +230,7 @@ class _PagamentoWidgetState extends State<PagamentoWidget>
                                                 onTap: () async {
                                                   safeSetState(() {});
                                                 },
-                                                child: const Icon(
+                                                child: Icon(
                                                   Icons.check_circle,
                                                   color: Color(0xFF3A4545),
                                                   size: 22.0,
@@ -244,7 +248,7 @@ class _PagamentoWidgetState extends State<PagamentoWidget>
                                                       .qualEscolhiPagar = 0;
                                                   FFAppState().update(() {});
                                                 },
-                                                child: const Icon(
+                                                child: Icon(
                                                   Icons.circle_outlined,
                                                   color: Color(0xFF3A4545),
                                                   size: 22.0,
@@ -270,13 +274,13 @@ class _PagamentoWidgetState extends State<PagamentoWidget>
                                               .bodyMedium
                                               .override(
                                                 fontFamily: 'Inter',
-                                                color: const Color(0xFF424242),
+                                                color: Color(0xFF424242),
                                                 fontSize: 20.0,
                                                 letterSpacing: 1.0,
                                                 fontWeight: FontWeight.w600,
                                               ),
                                         ),
-                                      ].divide(const SizedBox(width: 12.0)),
+                                      ].divide(SizedBox(width: 12.0)),
                                     ),
                                     if (currentUserEmail == '')
                                       FutureBuilder<List<MeusCartoesRow>>(
@@ -337,7 +341,7 @@ class _PagamentoWidgetState extends State<PagamentoWidget>
                                                       if (FFAppState()
                                                               .qualEscolhiPagar ==
                                                           (columnIndex + 1)) {
-                                                        return const Icon(
+                                                        return Icon(
                                                           Icons.check_circle,
                                                           color:
                                                               Color(0xFF3A4545),
@@ -363,7 +367,7 @@ class _PagamentoWidgetState extends State<PagamentoWidget>
                                                                     .id;
                                                             safeSetState(() {});
                                                           },
-                                                          child: const Icon(
+                                                          child: Icon(
                                                             Icons
                                                                 .circle_outlined,
                                                             color: Color(
@@ -378,7 +382,7 @@ class _PagamentoWidgetState extends State<PagamentoWidget>
                                                     mainAxisSize:
                                                         MainAxisSize.max,
                                                     children: [
-                                                      const FaIcon(
+                                                      FaIcon(
                                                         FontAwesomeIcons
                                                             .creditCard,
                                                         color:
@@ -395,7 +399,7 @@ class _PagamentoWidgetState extends State<PagamentoWidget>
                                                             .override(
                                                               fontFamily:
                                                                   'Inter Tight',
-                                                              color: const Color(
+                                                              color: Color(
                                                                   0xFF424242),
                                                               fontSize: 20.0,
                                                               letterSpacing:
@@ -410,7 +414,7 @@ class _PagamentoWidgetState extends State<PagamentoWidget>
                                                   Expanded(
                                                     child: Align(
                                                       alignment:
-                                                          const AlignmentDirectional(
+                                                          AlignmentDirectional(
                                                               1.0, 0.0),
                                                       child: InkWell(
                                                         splashColor:
@@ -430,22 +434,22 @@ class _PagamentoWidgetState extends State<PagamentoWidget>
                                                                     builder:
                                                                         (alertDialogContext) {
                                                                       return AlertDialog(
-                                                                        title: const Text(
+                                                                        title: Text(
                                                                             'Deseja remover seu cartão?'),
                                                                         content:
-                                                                            const Text('Seus dados serão perdidos e não será possível recupera-los'),
+                                                                            Text('Seus dados serão perdidos e não será possível recupera-los'),
                                                                         actions: [
                                                                           TextButton(
                                                                             onPressed: () =>
                                                                                 Navigator.pop(alertDialogContext, false),
                                                                             child:
-                                                                                const Text('Voltar'),
+                                                                                Text('Voltar'),
                                                                           ),
                                                                           TextButton(
                                                                             onPressed: () =>
                                                                                 Navigator.pop(alertDialogContext, true),
                                                                             child:
-                                                                                const Text('Apagar cartão'),
+                                                                                Text('Apagar cartão'),
                                                                           ),
                                                                         ],
                                                                       );
@@ -475,9 +479,9 @@ class _PagamentoWidgetState extends State<PagamentoWidget>
                                                       ),
                                                     ),
                                                   ),
-                                                ].divide(const SizedBox(width: 12.0)),
+                                                ].divide(SizedBox(width: 12.0)),
                                               );
-                                            }).divide(const SizedBox(height: 22.0)),
+                                            }).divide(SizedBox(height: 22.0)),
                                           );
                                         },
                                       ),
@@ -498,7 +502,7 @@ class _PagamentoWidgetState extends State<PagamentoWidget>
                                                           .index +
                                                       1),
                                               duration:
-                                                  const Duration(milliseconds: 300),
+                                                  Duration(milliseconds: 300),
                                               curve: Curves.ease,
                                             );
                                           });
@@ -506,7 +510,7 @@ class _PagamentoWidgetState extends State<PagamentoWidget>
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
-                                            const Icon(
+                                            Icon(
                                               Icons.add_sharp,
                                               color: Color(0xFF3A4545),
                                               size: 25.0,
@@ -519,18 +523,18 @@ class _PagamentoWidgetState extends State<PagamentoWidget>
                                                   .bodyMedium
                                                   .override(
                                                     fontFamily: 'Inter Tight',
-                                                    color: const Color(0xFF424242),
+                                                    color: Color(0xFF424242),
                                                     fontSize: 18.0,
                                                     letterSpacing: 0.0,
                                                     fontWeight: FontWeight.w500,
                                                   ),
                                             ),
-                                          ].divide(const SizedBox(width: 12.0)),
+                                          ].divide(SizedBox(width: 12.0)),
                                         ),
                                       ),
                                     FFButtonWidget(
                                       onPressed: () async {
-                                        var shouldSetState = false;
+                                        var _shouldSetState = false;
                                         if (FFAppState().qualEscolhiPagar ==
                                             0) {
                                           _model.apiResult3pnCopy23 =
@@ -552,7 +556,7 @@ class _PagamentoWidgetState extends State<PagamentoWidget>
                                                 currentUserDocument?.cpf, ''),
                                           );
 
-                                          shouldSetState = true;
+                                          _shouldSetState = true;
                                           if ((_model.apiResult3pnCopy23
                                                   ?.succeeded ??
                                               true)) {
@@ -603,7 +607,7 @@ class _PagamentoWidgetState extends State<PagamentoWidget>
                                               context: context,
                                               builder: (alertDialogContext) {
                                                 return AlertDialog(
-                                                  title: const Text('Ops!'),
+                                                  title: Text('Ops!'),
                                                   content: Text(
                                                       'Entre em contato com suporte e informe o seguinte erro: ${(_model.apiResult3pnCopy23?.exceptionMessage ?? '')}'),
                                                   actions: [
@@ -611,15 +615,14 @@ class _PagamentoWidgetState extends State<PagamentoWidget>
                                                       onPressed: () =>
                                                           Navigator.pop(
                                                               alertDialogContext),
-                                                      child: const Text('Ok'),
+                                                      child: Text('Ok'),
                                                     ),
                                                   ],
                                                 );
                                               },
                                             );
-                                            if (shouldSetState) {
+                                            if (_shouldSetState)
                                               safeSetState(() {});
-                                            }
                                             return;
                                           }
 
@@ -628,14 +631,13 @@ class _PagamentoWidgetState extends State<PagamentoWidget>
                                               _model.tabBarController!.length -
                                                   1,
                                               duration:
-                                                  const Duration(milliseconds: 300),
+                                                  Duration(milliseconds: 300),
                                               curve: Curves.ease,
                                             );
                                           });
 
-                                          if (shouldSetState) {
+                                          if (_shouldSetState)
                                             safeSetState(() {});
-                                          }
                                           return;
                                         } else {
                                           _model.cartaoEscolhidoPlus =
@@ -646,7 +648,7 @@ class _PagamentoWidgetState extends State<PagamentoWidget>
                                               FFAppState().cartaoEscolhidoID,
                                             ),
                                           );
-                                          shouldSetState = true;
+                                          _shouldSetState = true;
                                           _model.criarTokenCopy =
                                               await CriarTokenCall.call(
                                             cardNumber: functions
@@ -687,7 +689,7 @@ class _PagamentoWidgetState extends State<PagamentoWidget>
                                                 .toString(),
                                           );
 
-                                          shouldSetState = true;
+                                          _shouldSetState = true;
                                           if ((_model
                                                   .criarTokenCopy?.succeeded ??
                                               true)) {
@@ -722,22 +724,22 @@ class _PagamentoWidgetState extends State<PagamentoWidget>
                                                   .preco,
                                             );
 
-                                            shouldSetState = true;
+                                            _shouldSetState = true;
                                             if ((_model.pagarCopy?.succeeded ??
                                                 true)) {
                                               await showDialog(
                                                 context: context,
                                                 builder: (alertDialogContext) {
                                                   return AlertDialog(
-                                                    title: const Text('Sucesso!'),
-                                                    content: const Text(
+                                                    title: Text('Sucesso!'),
+                                                    content: Text(
                                                         'Pagamento realizado.'),
                                                     actions: [
                                                       TextButton(
                                                         onPressed: () =>
                                                             Navigator.pop(
                                                                 alertDialogContext),
-                                                        child: const Text('Ok'),
+                                                        child: Text('Ok'),
                                                       ),
                                                     ],
                                                   );
@@ -748,11 +750,11 @@ class _PagamentoWidgetState extends State<PagamentoWidget>
                                               FFAppState().myCartSummary = [];
                                               FFAppState().update(() {});
 
-                                              context.pushNamed('sucesso');
+                                              context.pushNamed(
+                                                  SucessoWidget.routeName);
 
-                                              if (shouldSetState) {
+                                              if (_shouldSetState)
                                                 safeSetState(() {});
-                                              }
                                               return;
                                             } else {
                                               ScaffoldMessenger.of(context)
@@ -760,19 +762,18 @@ class _PagamentoWidgetState extends State<PagamentoWidget>
                                                 SnackBar(
                                                   content: Text(
                                                     'Erro. ${(_model.pagarCopy12?.exceptionMessage ?? '')}',
-                                                    style: const TextStyle(
+                                                    style: TextStyle(
                                                       color: Colors.white,
                                                     ),
                                                   ),
-                                                  duration: const Duration(
+                                                  duration: Duration(
                                                       milliseconds: 4000),
                                                   backgroundColor:
-                                                      const Color(0xFFD9003F),
+                                                      Color(0xFFD9003F),
                                                 ),
                                               );
-                                              if (shouldSetState) {
+                                              if (_shouldSetState)
                                                 safeSetState(() {});
-                                              }
                                               return;
                                             }
                                           } else {
@@ -781,35 +782,33 @@ class _PagamentoWidgetState extends State<PagamentoWidget>
                                               SnackBar(
                                                 content: Text(
                                                   'Erro.  verifique as informações do seu cartão. ${(_model.criarTokenCopy?.exceptionMessage ?? '')}',
-                                                  style: const TextStyle(
+                                                  style: TextStyle(
                                                     color: Colors.white,
                                                   ),
                                                 ),
-                                                duration: const Duration(
+                                                duration: Duration(
                                                     milliseconds: 4000),
                                                 backgroundColor:
-                                                    const Color(0xFFD9003F),
+                                                    Color(0xFFD9003F),
                                               ),
                                             );
-                                            if (shouldSetState) {
+                                            if (_shouldSetState)
                                               safeSetState(() {});
-                                            }
                                             return;
                                           }
                                         }
 
-                                        if (shouldSetState) {
+                                        if (_shouldSetState)
                                           safeSetState(() {});
-                                        }
                                       },
                                       text: 'Confirmar',
                                       options: FFButtonOptions(
                                         width: double.infinity,
                                         height: 43.0,
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             24.0, 0.0, 24.0, 0.0),
                                         iconPadding:
-                                            const EdgeInsetsDirectional.fromSTEB(
+                                            EdgeInsetsDirectional.fromSTEB(
                                                 0.0, 0.0, 0.0, 0.0),
                                         color: FlutterFlowTheme.of(context)
                                             .primary,
@@ -822,7 +821,7 @@ class _PagamentoWidgetState extends State<PagamentoWidget>
                                               fontWeight: FontWeight.bold,
                                             ),
                                         elevation: 3.0,
-                                        borderSide: const BorderSide(
+                                        borderSide: BorderSide(
                                           color: Colors.transparent,
                                           width: 1.0,
                                         ),
@@ -831,9 +830,9 @@ class _PagamentoWidgetState extends State<PagamentoWidget>
                                       ),
                                     ),
                                   ]
-                                      .divide(const SizedBox(height: 25.0))
-                                      .addToStart(const SizedBox(height: 22.0))
-                                      .addToEnd(const SizedBox(height: 20.0)),
+                                      .divide(SizedBox(height: 25.0))
+                                      .addToStart(SizedBox(height: 22.0))
+                                      .addToEnd(SizedBox(height: 20.0)),
                                 ),
                               ),
                             ),
@@ -841,9 +840,9 @@ class _PagamentoWidgetState extends State<PagamentoWidget>
                         ),
                       ),
                       Align(
-                        alignment: const AlignmentDirectional(0.0, -1.0),
+                        alignment: AlignmentDirectional(0.0, -1.0),
                         child: Padding(
-                          padding: const EdgeInsets.all(14.0),
+                          padding: EdgeInsets.all(14.0),
                           child: Container(
                             height: 403.0,
                             decoration: BoxDecoration(
@@ -851,12 +850,12 @@ class _PagamentoWidgetState extends State<PagamentoWidget>
                               borderRadius: BorderRadius.circular(22.0),
                             ),
                             child: Align(
-                              alignment: const AlignmentDirectional(0.0, -1.0),
+                              alignment: AlignmentDirectional(0.0, -1.0),
                               child: Form(
                                 key: _model.formKey,
                                 autovalidateMode: AutovalidateMode.disabled,
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       18.0, 33.0, 18.0, 18.0),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.min,
@@ -864,9 +863,9 @@ class _PagamentoWidgetState extends State<PagamentoWidget>
                                         CrossAxisAlignment.center,
                                     children: [
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 0.0, 16.0),
-                                        child: SizedBox(
+                                        child: Container(
                                           width: double.infinity,
                                           child: TextFormField(
                                             controller: _model
@@ -948,9 +947,9 @@ class _PagamentoWidgetState extends State<PagamentoWidget>
                                         ),
                                       ),
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 0.0, 16.0),
-                                        child: SizedBox(
+                                        child: Container(
                                           width: double.infinity,
                                           child: TextFormField(
                                             controller:
@@ -1034,9 +1033,9 @@ class _PagamentoWidgetState extends State<PagamentoWidget>
                                         ),
                                       ),
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 0.0, 16.0),
-                                        child: SizedBox(
+                                        child: Container(
                                           width: double.infinity,
                                           child: TextFormField(
                                             controller: _model
@@ -1122,10 +1121,10 @@ class _PagamentoWidgetState extends State<PagamentoWidget>
                                         children: [
                                           Expanded(
                                             child: Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       0.0, 0.0, 0.0, 16.0),
-                                              child: SizedBox(
+                                              child: Container(
                                                 width: double.infinity,
                                                 child: TextFormField(
                                                   controller:
@@ -1228,10 +1227,10 @@ class _PagamentoWidgetState extends State<PagamentoWidget>
                                           ),
                                           Expanded(
                                             child: Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       0.0, 0.0, 0.0, 16.0),
-                                              child: SizedBox(
+                                              child: Container(
                                                 width: double.infinity,
                                                 child: TextFormField(
                                                   controller:
@@ -1334,10 +1333,10 @@ class _PagamentoWidgetState extends State<PagamentoWidget>
                                           ),
                                           Expanded(
                                             child: Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       0.0, 0.0, 0.0, 16.0),
-                                              child: SizedBox(
+                                              child: Container(
                                                 width: double.infinity,
                                                 child: TextFormField(
                                                   controller:
@@ -1438,10 +1437,10 @@ class _PagamentoWidgetState extends State<PagamentoWidget>
                                               ),
                                             ),
                                           ),
-                                        ].divide(const SizedBox(width: 10.0)),
+                                        ].divide(SizedBox(width: 10.0)),
                                       ),
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 22.0, 0.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -1462,27 +1461,27 @@ class _PagamentoWidgetState extends State<PagamentoWidget>
                                                   _model.tabBarController!
                                                       .animateTo(
                                                     0,
-                                                    duration: const Duration(
+                                                    duration: Duration(
                                                         milliseconds: 300),
                                                     curve: Curves.ease,
                                                   );
                                                 });
                                               },
                                               text: 'Salvar ',
-                                              icon: const FaIcon(
+                                              icon: FaIcon(
                                                 FontAwesomeIcons.save,
                                                 size: 20.0,
                                               ),
                                               options: FFButtonOptions(
                                                 height: 52.0,
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 0.0, 10.0, 0.0),
                                                 iconPadding:
-                                                    const EdgeInsetsDirectional
+                                                    EdgeInsetsDirectional
                                                         .fromSTEB(
                                                             0.0, 0.0, 0.0, 0.0),
-                                                color: const Color(0x00FB6610),
+                                                color: Color(0x00FB6610),
                                                 textStyle: FlutterFlowTheme.of(
                                                         context)
                                                     .titleSmall
@@ -1498,7 +1497,7 @@ class _PagamentoWidgetState extends State<PagamentoWidget>
                                                           FontWeight.w600,
                                                     ),
                                                 elevation: 0.0,
-                                                borderSide: const BorderSide(
+                                                borderSide: BorderSide(
                                                   color: Colors.transparent,
                                                   width: 1.0,
                                                 ),
@@ -1509,7 +1508,7 @@ class _PagamentoWidgetState extends State<PagamentoWidget>
                                             Expanded(
                                               child: FFButtonWidget(
                                                 onPressed: () async {
-                                                  var shouldSetState = false;
+                                                  var _shouldSetState = false;
                                                   if (_model.formKey
                                                               .currentState ==
                                                           null ||
@@ -1548,7 +1547,7 @@ class _PagamentoWidgetState extends State<PagamentoWidget>
                                                         .toString(),
                                                   );
 
-                                                  shouldSetState = true;
+                                                  _shouldSetState = true;
                                                   if ((_model.criarTokenCopy237
                                                           ?.succeeded ??
                                                       true)) {
@@ -1589,7 +1588,7 @@ class _PagamentoWidgetState extends State<PagamentoWidget>
                                                               .preco,
                                                     );
 
-                                                    shouldSetState = true;
+                                                    _shouldSetState = true;
                                                     if ((_model.pagarCopy12
                                                             ?.succeeded ??
                                                         true)) {
@@ -1598,9 +1597,9 @@ class _PagamentoWidgetState extends State<PagamentoWidget>
                                                         builder:
                                                             (alertDialogContext) {
                                                           return AlertDialog(
-                                                            title: const Text(
+                                                            title: Text(
                                                                 'Sucesso!'),
-                                                            content: const Text(
+                                                            content: Text(
                                                                 'Pagamento realizado.'),
                                                             actions: [
                                                               TextButton(
@@ -1608,7 +1607,7 @@ class _PagamentoWidgetState extends State<PagamentoWidget>
                                                                     Navigator.pop(
                                                                         alertDialogContext),
                                                                 child:
-                                                                    const Text('Ok'),
+                                                                    Text('Ok'),
                                                               ),
                                                             ],
                                                           );
@@ -1621,12 +1620,12 @@ class _PagamentoWidgetState extends State<PagamentoWidget>
                                                       FFAppState()
                                                           .update(() {});
 
-                                                      context
-                                                          .pushNamed('sucesso');
+                                                      context.pushNamed(
+                                                          SucessoWidget
+                                                              .routeName);
 
-                                                      if (shouldSetState) {
+                                                      if (_shouldSetState)
                                                         safeSetState(() {});
-                                                      }
                                                       return;
                                                     } else {
                                                       ScaffoldMessenger.of(
@@ -1635,21 +1634,20 @@ class _PagamentoWidgetState extends State<PagamentoWidget>
                                                         SnackBar(
                                                           content: Text(
                                                             'Erro. ${(_model.pagarCopy12?.exceptionMessage ?? '')}',
-                                                            style: const TextStyle(
+                                                            style: TextStyle(
                                                               color:
                                                                   Colors.white,
                                                             ),
                                                           ),
-                                                          duration: const Duration(
+                                                          duration: Duration(
                                                               milliseconds:
                                                                   4000),
                                                           backgroundColor:
-                                                              const Color(0xFFD9003F),
+                                                              Color(0xFFD9003F),
                                                         ),
                                                       );
-                                                      if (shouldSetState) {
+                                                      if (_shouldSetState)
                                                         safeSetState(() {});
-                                                      }
                                                       return;
                                                     }
                                                   } else {
@@ -1659,38 +1657,36 @@ class _PagamentoWidgetState extends State<PagamentoWidget>
                                                       SnackBar(
                                                         content: Text(
                                                           'Erro.  verifique as informações do seu cartão. ${(_model.criarTokenCopy?.statusCode ?? 200).toString()}',
-                                                          style: const TextStyle(
+                                                          style: TextStyle(
                                                             color: Colors.white,
                                                           ),
                                                         ),
-                                                        duration: const Duration(
+                                                        duration: Duration(
                                                             milliseconds: 4000),
                                                         backgroundColor:
-                                                            const Color(0xFFD9003F),
+                                                            Color(0xFFD9003F),
                                                       ),
                                                     );
-                                                    if (shouldSetState) {
+                                                    if (_shouldSetState)
                                                       safeSetState(() {});
-                                                    }
                                                     return;
                                                   }
 
-                                                  if (shouldSetState) {
+                                                  if (_shouldSetState)
                                                     safeSetState(() {});
-                                                  }
                                                 },
                                                 text: 'Salvar e pagar',
-                                                icon: const Icon(
+                                                icon: Icon(
                                                   Icons.deblur_rounded,
                                                   size: 30.0,
                                                 ),
                                                 options: FFButtonOptions(
                                                   height: 48.0,
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           10.0, 0.0, 10.0, 0.0),
                                                   iconPadding:
-                                                      const EdgeInsetsDirectional
+                                                      EdgeInsetsDirectional
                                                           .fromSTEB(0.0, 0.0,
                                                               0.0, 0.0),
                                                   color: FlutterFlowTheme.of(
@@ -1709,7 +1705,7 @@ class _PagamentoWidgetState extends State<PagamentoWidget>
                                                             FontWeight.normal,
                                                       ),
                                                   elevation: 0.0,
-                                                  borderSide: const BorderSide(
+                                                  borderSide: BorderSide(
                                                     color: Colors.transparent,
                                                     width: 1.0,
                                                   ),
@@ -1719,7 +1715,7 @@ class _PagamentoWidgetState extends State<PagamentoWidget>
                                                 ),
                                               ),
                                             ),
-                                          ].divide(const SizedBox(width: 10.0)),
+                                          ].divide(SizedBox(width: 10.0)),
                                         ),
                                       ),
                                     ],
@@ -1737,7 +1733,7 @@ class _PagamentoWidgetState extends State<PagamentoWidget>
                           crossAxisAlignment: CrossAxisAlignment.stretch,
                           children: [
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 30.0, 0.0, 0.0),
                               child: Text(
                                 valueOrDefault<String>(
@@ -1754,7 +1750,7 @@ class _PagamentoWidgetState extends State<PagamentoWidget>
                                     .bodyMedium
                                     .override(
                                       fontFamily: 'Inter Tight',
-                                      color: const Color(0xFF00A78B),
+                                      color: Color(0xFF00A78B),
                                       fontSize: 20.0,
                                       letterSpacing: 1.0,
                                       fontWeight: FontWeight.bold,
@@ -1767,22 +1763,22 @@ class _PagamentoWidgetState extends State<PagamentoWidget>
                               width: double.infinity,
                               color: FlutterFlowTheme.of(context).primaryText,
                               backgroundColor: Colors.transparent,
-                              errorBuilder: (context, error) => const SizedBox(
+                              errorBuilder: (_context, _error) => SizedBox(
                                 width: double.infinity,
                               ),
                               drawText: false,
                             ),
                             Padding(
-                              padding: const EdgeInsets.all(12.0),
+                              padding: EdgeInsets.all(12.0),
                               child: Container(
-                                decoration: const BoxDecoration(),
+                                decoration: BoxDecoration(),
                                 child: Container(
                                   decoration: BoxDecoration(
                                     color: Colors.white,
                                     borderRadius: BorderRadius.circular(10.0),
                                   ),
                                   child: Padding(
-                                    padding: const EdgeInsets.all(16.0),
+                                    padding: EdgeInsets.all(16.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:
@@ -1812,7 +1808,7 @@ class _PagamentoWidgetState extends State<PagamentoWidget>
                                                         FFAppState().chavePix));
                                             ScaffoldMessenger.of(context)
                                                 .showSnackBar(
-                                              const SnackBar(
+                                              SnackBar(
                                                 content: Text(
                                                   'Copiado com sucesso',
                                                   style: TextStyle(
@@ -1826,39 +1822,40 @@ class _PagamentoWidgetState extends State<PagamentoWidget>
                                               ),
                                             );
                                           },
-                                          child: const Icon(
+                                          child: Icon(
                                             Icons.content_copy,
                                             color: Color(0xFF0C4D60),
                                             size: 33.0,
                                           ),
                                         ),
-                                      ].divide(const SizedBox(width: 10.0)),
+                                      ].divide(SizedBox(width: 10.0)),
                                     ),
                                   ),
                                 ),
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsets.all(20.0),
+                              padding: EdgeInsets.all(20.0),
                               child: FFButtonWidget(
                                 onPressed: () async {
                                   currentUserLocationValue =
                                       await getCurrentUserLocation(
-                                          defaultLocation: const LatLng(0.0, 0.0));
-                                  var shouldSetState = false;
+                                          defaultLocation: LatLng(0.0, 0.0));
+                                  var _shouldSetState = false;
                                   _model.apiResultml2 =
                                       await StatusPixMPCall.call(
                                     idPix: FFAppState().idPedido,
                                   );
 
-                                  shouldSetState = true;
+                                  _shouldSetState = true;
                                   if ((_model.apiResultml2?.succeeded ??
                                       true)) {
                                     if (StatusPixMPCall.status(
                                           (_model.apiResultml2?.jsonBody ?? ''),
                                         ) ==
                                         'approved') {
-                                      context.pushNamed('sucesso');
+                                      context
+                                          .pushNamed(SucessoWidget.routeName);
 
                                       await currentUserReference!.update({
                                         ...createUsersRecordData(
@@ -1891,7 +1888,7 @@ class _PagamentoWidgetState extends State<PagamentoWidget>
                                     } else {
                                       ScaffoldMessenger.of(context)
                                           .showSnackBar(
-                                        const SnackBar(
+                                        SnackBar(
                                           content: Text(
                                             'Não recebemos seu pagamento',
                                             style: TextStyle(
@@ -1905,7 +1902,7 @@ class _PagamentoWidgetState extends State<PagamentoWidget>
                                       );
                                     }
 
-                                    if (shouldSetState) safeSetState(() {});
+                                    if (_shouldSetState) safeSetState(() {});
                                     return;
                                   } else {
                                     ScaffoldMessenger.of(context).showSnackBar(
@@ -1914,30 +1911,30 @@ class _PagamentoWidgetState extends State<PagamentoWidget>
                                           (_model.apiResultml2
                                                   ?.exceptionMessage ??
                                               ''),
-                                          style: const TextStyle(
+                                          style: TextStyle(
                                             color: Colors.white,
                                           ),
                                         ),
-                                        duration: const Duration(milliseconds: 4000),
-                                        backgroundColor: const Color(0xFFA9111D),
+                                        duration: Duration(milliseconds: 4000),
+                                        backgroundColor: Color(0xFFA9111D),
                                       ),
                                     );
-                                    if (shouldSetState) safeSetState(() {});
+                                    if (_shouldSetState) safeSetState(() {});
                                     return;
                                   }
 
-                                  if (shouldSetState) safeSetState(() {});
+                                  if (_shouldSetState) safeSetState(() {});
                                 },
                                 text: 'Verificar status do pagamento',
-                                icon: const Icon(
+                                icon: Icon(
                                   Icons.search_rounded,
                                   size: 30.0,
                                 ),
                                 options: FFButtonOptions(
                                   height: 54.0,
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       24.0, 0.0, 24.0, 0.0),
-                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
                                   color: FlutterFlowTheme.of(context).primary,
                                   textStyle: FlutterFlowTheme.of(context)
@@ -1950,7 +1947,7 @@ class _PagamentoWidgetState extends State<PagamentoWidget>
                                         fontWeight: FontWeight.w600,
                                       ),
                                   elevation: 3.0,
-                                  borderSide: const BorderSide(
+                                  borderSide: BorderSide(
                                     color: Colors.transparent,
                                     width: 1.0,
                                   ),
@@ -1958,14 +1955,14 @@ class _PagamentoWidgetState extends State<PagamentoWidget>
                                 ),
                               ),
                             ),
-                          ].divide(const SizedBox(height: 15.0)),
+                          ].divide(SizedBox(height: 15.0)),
                         ),
                       ),
                     ],
                   ),
                 ),
                 Align(
-                  alignment: const Alignment(0.0, 0),
+                  alignment: Alignment(0.0, 0),
                   child: TabBar(
                     labelColor: FlutterFlowTheme.of(context).primaryText,
                     unselectedLabelColor:
@@ -1977,10 +1974,10 @@ class _PagamentoWidgetState extends State<PagamentoWidget>
                               letterSpacing: 0.0,
                               lineHeight: 1.0,
                             ),
-                    unselectedLabelStyle: const TextStyle(),
-                    indicatorColor: const Color(0x00FB6610),
+                    unselectedLabelStyle: TextStyle(),
+                    indicatorColor: Color(0x00FB6610),
                     indicatorWeight: 1.0,
-                    tabs: const [
+                    tabs: [
                       Tab(
                         text: 'Bem vindo',
                       ),

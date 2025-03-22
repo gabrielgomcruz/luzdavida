@@ -6,6 +6,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/actions/actions.dart' as action_blocks;
+import '/index.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -15,6 +16,9 @@ export 'profile_vendedor_model.dart';
 
 class ProfileVendedorWidget extends StatefulWidget {
   const ProfileVendedorWidget({super.key});
+
+  static String routeName = 'ProfileVendedor';
+  static String routePath = '/profileVendedor';
 
   @override
   State<ProfileVendedorWidget> createState() => _ProfileVendedorWidgetState();
@@ -36,7 +40,7 @@ class _ProfileVendedorWidgetState extends State<ProfileVendedorWidget>
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       if (currentUserDocument?.euSou == EuSou.Cliente) {
-        context.pushNamed('homeCliente');
+        context.pushNamed(HomeClienteWidget.routeName);
       } else {
         await action_blocks.pixValidation(context);
         safeSetState(() {});
@@ -59,8 +63,8 @@ class _ProfileVendedorWidgetState extends State<ProfileVendedorWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 400.0.ms,
-            begin: const Offset(3.0, 3.0),
-            end: const Offset(1.0, 1.0),
+            begin: Offset(3.0, 3.0),
+            end: Offset(1.0, 1.0),
           ),
         ],
       ),
@@ -79,8 +83,8 @@ class _ProfileVendedorWidgetState extends State<ProfileVendedorWidget>
             curve: Curves.easeInOut,
             delay: 400.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(0.0, 60.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 60.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -107,17 +111,17 @@ class _ProfileVendedorWidgetState extends State<ProfileVendedorWidget>
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
         body: Align(
-          alignment: const AlignmentDirectional(0.0, -1.0),
+          alignment: AlignmentDirectional(0.0, -1.0),
           child: Container(
             width: double.infinity,
-            constraints: const BoxConstraints(
+            constraints: BoxConstraints(
               maxWidth: 770.0,
             ),
             decoration: BoxDecoration(
               color: FlutterFlowTheme.of(context).secondaryBackground,
             ),
             child: Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 22.0),
+              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 22.0),
               child: SingleChildScrollView(
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
@@ -127,7 +131,7 @@ class _ProfileVendedorWidgetState extends State<ProfileVendedorWidget>
                     if (currentUserDocument!.dataDoProxPagamento! <=
                         getCurrentTimestamp)
                       Padding(
-                        padding: const EdgeInsets.all(14.0),
+                        padding: EdgeInsets.all(14.0),
                         child: AuthUserStreamWidget(
                           builder: (context) => InkWell(
                             splashColor: Colors.transparent,
@@ -135,17 +139,17 @@ class _ProfileVendedorWidgetState extends State<ProfileVendedorWidget>
                             hoverColor: Colors.transparent,
                             highlightColor: Colors.transparent,
                             onTap: () async {
-                              context.pushNamed('plano');
+                              context.pushNamed(PlanoWidget.routeName);
                             },
                             child: wrapWithModel(
                               model: _model.toast04Model,
                               updateCallback: () => safeSetState(() {}),
-                              child: const Toast04Widget(),
+                              child: Toast04Widget(),
                             ),
                           ),
                         ),
                       ),
-                    SizedBox(
+                    Container(
                       width: double.infinity,
                       height: 100.0,
                       child: Stack(
@@ -155,7 +159,7 @@ class _ProfileVendedorWidgetState extends State<ProfileVendedorWidget>
                             elevation: 5.0,
                             child: Container(
                               width: double.infinity,
-                              decoration: const BoxDecoration(),
+                              decoration: BoxDecoration(),
                               child: ClipRRect(
                                 borderRadius: BorderRadius.circular(8.0),
                                 child: Image.asset(
@@ -167,7 +171,7 @@ class _ProfileVendedorWidgetState extends State<ProfileVendedorWidget>
                             ),
                           ),
                           Align(
-                            alignment: const AlignmentDirectional(0.0, 0.0),
+                            alignment: AlignmentDirectional(0.0, 0.0),
                             child: Container(
                               width: double.infinity,
                               height: double.infinity,
@@ -176,20 +180,20 @@ class _ProfileVendedorWidgetState extends State<ProfileVendedorWidget>
                                   colors: [
                                     FlutterFlowTheme.of(context)
                                         .secondaryBackground,
-                                    const Color(0x90FFFFFF)
+                                    Color(0x90FFFFFF)
                                   ],
-                                  stops: const [0.0, 0.5],
-                                  begin: const AlignmentDirectional(-1.0, -1.0),
-                                  end: const AlignmentDirectional(1.0, 1.0),
+                                  stops: [0.0, 0.5],
+                                  begin: AlignmentDirectional(-1.0, -1.0),
+                                  end: AlignmentDirectional(1.0, 1.0),
                                 ),
                               ),
                             ).animateOnPageLoad(
                                 animationsMap['containerOnPageLoadAnimation']!),
                           ),
                           Align(
-                            alignment: const AlignmentDirectional(-1.0, 1.0),
+                            alignment: AlignmentDirectional(-1.0, 1.0),
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   24.0, 0.0, 0.0, 0.0),
                               child: Container(
                                 width: 90.0,
@@ -204,15 +208,15 @@ class _ProfileVendedorWidgetState extends State<ProfileVendedorWidget>
                                   ),
                                 ),
                                 child: Padding(
-                                  padding: const EdgeInsets.all(4.0),
+                                  padding: EdgeInsets.all(4.0),
                                   child: AuthUserStreamWidget(
                                     builder: (context) => ClipRRect(
                                       borderRadius: BorderRadius.circular(50.0),
                                       child: CachedNetworkImage(
                                         fadeInDuration:
-                                            const Duration(milliseconds: 500),
+                                            Duration(milliseconds: 500),
                                         fadeOutDuration:
-                                            const Duration(milliseconds: 500),
+                                            Duration(milliseconds: 500),
                                         imageUrl: valueOrDefault<String>(
                                           currentUserPhoto,
                                           'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/luz-da-vida-iym9jw/assets/p49dmi4023ud/ballon.png',
@@ -228,15 +232,15 @@ class _ProfileVendedorWidgetState extends State<ProfileVendedorWidget>
                             ),
                           ),
                           Align(
-                            alignment: const AlignmentDirectional(0.93, -0.67),
+                            alignment: AlignmentDirectional(0.93, -0.67),
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 5.0, 0.0, 0.0),
                               child: Image.asset(
                                 'assets/images/Design_sem_nome_(3).png',
                                 width: 88.0,
                                 fit: BoxFit.contain,
-                                alignment: const Alignment(0.0, -1.0),
+                                alignment: Alignment(0.0, -1.0),
                               ),
                             ),
                           ),
@@ -248,7 +252,7 @@ class _ProfileVendedorWidgetState extends State<ProfileVendedorWidget>
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               24.0, 12.0, 0.0, 0.0),
                           child: AuthUserStreamWidget(
                             builder: (context) => Text(
@@ -263,7 +267,7 @@ class _ProfileVendedorWidgetState extends State<ProfileVendedorWidget>
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               24.0, 4.0, 0.0, 16.0),
                           child: Text(
                             valueOrDefault<String>(
@@ -280,7 +284,7 @@ class _ProfileVendedorWidgetState extends State<ProfileVendedorWidget>
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               24.0, 4.0, 0.0, 0.0),
                           child: Text(
                             'Minha conta',
@@ -293,7 +297,7 @@ class _ProfileVendedorWidgetState extends State<ProfileVendedorWidget>
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               16.0, 12.0, 16.0, 0.0),
                           child: InkWell(
                             splashColor: Colors.transparent,
@@ -301,14 +305,15 @@ class _ProfileVendedorWidgetState extends State<ProfileVendedorWidget>
                             hoverColor: Colors.transparent,
                             highlightColor: Colors.transparent,
                             onTap: () async {
-                              context.pushNamed('auth_2_EditProfile');
+                              context
+                                  .pushNamed(Auth2EditProfileWidget.routeName);
                             },
                             child: Container(
                               width: double.infinity,
                               decoration: BoxDecoration(
                                 color: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
-                                boxShadow: const [
+                                boxShadow: [
                                   BoxShadow(
                                     blurRadius: 3.0,
                                     color: Color(0x33000000),
@@ -326,7 +331,7 @@ class _ProfileVendedorWidgetState extends State<ProfileVendedorWidget>
                                 ),
                               ),
                               child: Padding(
-                                padding: const EdgeInsets.all(12.0),
+                                padding: EdgeInsets.all(12.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
@@ -337,7 +342,7 @@ class _ProfileVendedorWidgetState extends State<ProfileVendedorWidget>
                                       size: 24.0,
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           12.0, 0.0, 0.0, 0.0),
                                       child: Text(
                                         'Editar perfil',
@@ -352,7 +357,7 @@ class _ProfileVendedorWidgetState extends State<ProfileVendedorWidget>
                                     Expanded(
                                       child: Align(
                                         alignment:
-                                            const AlignmentDirectional(0.9, 0.0),
+                                            AlignmentDirectional(0.9, 0.0),
                                         child: Icon(
                                           Icons.arrow_forward_ios,
                                           color: FlutterFlowTheme.of(context)
@@ -368,7 +373,7 @@ class _ProfileVendedorWidgetState extends State<ProfileVendedorWidget>
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               16.0, 12.0, 16.0, 0.0),
                           child: InkWell(
                             splashColor: Colors.transparent,
@@ -376,14 +381,14 @@ class _ProfileVendedorWidgetState extends State<ProfileVendedorWidget>
                             hoverColor: Colors.transparent,
                             highlightColor: Colors.transparent,
                             onTap: () async {
-                              context.pushNamed('plano');
+                              context.pushNamed(PlanoWidget.routeName);
                             },
                             child: Container(
                               width: double.infinity,
                               decoration: BoxDecoration(
                                 color: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
-                                boxShadow: const [
+                                boxShadow: [
                                   BoxShadow(
                                     blurRadius: 3.0,
                                     color: Color(0x33000000),
@@ -401,7 +406,7 @@ class _ProfileVendedorWidgetState extends State<ProfileVendedorWidget>
                                 ),
                               ),
                               child: Padding(
-                                padding: const EdgeInsets.all(12.0),
+                                padding: EdgeInsets.all(12.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
@@ -412,7 +417,7 @@ class _ProfileVendedorWidgetState extends State<ProfileVendedorWidget>
                                       size: 24.0,
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           12.0, 0.0, 0.0, 0.0),
                                       child: Text(
                                         'Minha assinatura / planos',
@@ -427,7 +432,7 @@ class _ProfileVendedorWidgetState extends State<ProfileVendedorWidget>
                                     Expanded(
                                       child: Align(
                                         alignment:
-                                            const AlignmentDirectional(0.9, 0.0),
+                                            AlignmentDirectional(0.9, 0.0),
                                         child: Icon(
                                           Icons.arrow_forward_ios,
                                           color: FlutterFlowTheme.of(context)
@@ -443,7 +448,7 @@ class _ProfileVendedorWidgetState extends State<ProfileVendedorWidget>
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               16.0, 12.0, 16.0, 0.0),
                           child: InkWell(
                             splashColor: Colors.transparent,
@@ -451,14 +456,15 @@ class _ProfileVendedorWidgetState extends State<ProfileVendedorWidget>
                             hoverColor: Colors.transparent,
                             highlightColor: Colors.transparent,
                             onTap: () async {
-                              context.pushNamed('auth_2_EditProfile');
+                              context
+                                  .pushNamed(Auth2EditProfileWidget.routeName);
                             },
                             child: Container(
                               width: double.infinity,
                               decoration: BoxDecoration(
                                 color: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
-                                boxShadow: const [
+                                boxShadow: [
                                   BoxShadow(
                                     blurRadius: 3.0,
                                     color: Color(0x33000000),
@@ -476,7 +482,7 @@ class _ProfileVendedorWidgetState extends State<ProfileVendedorWidget>
                                 ),
                               ),
                               child: Padding(
-                                padding: const EdgeInsets.all(12.0),
+                                padding: EdgeInsets.all(12.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
@@ -487,7 +493,7 @@ class _ProfileVendedorWidgetState extends State<ProfileVendedorWidget>
                                       size: 24.0,
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           12.0, 0.0, 0.0, 0.0),
                                       child: Text(
                                         'Serviços que ofereço',
@@ -502,7 +508,7 @@ class _ProfileVendedorWidgetState extends State<ProfileVendedorWidget>
                                     Expanded(
                                       child: Align(
                                         alignment:
-                                            const AlignmentDirectional(0.9, 0.0),
+                                            AlignmentDirectional(0.9, 0.0),
                                         child: Icon(
                                           Icons.arrow_forward_ios,
                                           color: FlutterFlowTheme.of(context)
@@ -518,7 +524,7 @@ class _ProfileVendedorWidgetState extends State<ProfileVendedorWidget>
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               24.0, 16.0, 0.0, 0.0),
                           child: Text(
                             'Configurações do app',
@@ -531,7 +537,7 @@ class _ProfileVendedorWidgetState extends State<ProfileVendedorWidget>
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               16.0, 12.0, 16.0, 0.0),
                           child: InkWell(
                             splashColor: Colors.transparent,
@@ -544,21 +550,21 @@ class _ProfileVendedorWidgetState extends State<ProfileVendedorWidget>
                                         context: context,
                                         builder: (alertDialogContext) {
                                           return AlertDialog(
-                                            title: const Text(
+                                            title: Text(
                                                 'Deseja excluir sua conta?'),
-                                            content: const Text(
+                                            content: Text(
                                                 'Essa ação não poderá ser restaurada, tem certeza de que quer prosseguir?'),
                                             actions: [
                                               TextButton(
                                                 onPressed: () => Navigator.pop(
                                                     alertDialogContext, false),
-                                                child: const Text('Voltar'),
+                                                child: Text('Voltar'),
                                               ),
                                               TextButton(
                                                 onPressed: () => Navigator.pop(
                                                     alertDialogContext, true),
                                                 child:
-                                                    const Text('Excluir minha conta'),
+                                                    Text('Excluir minha conta'),
                                               ),
                                             ],
                                           );
@@ -572,7 +578,7 @@ class _ProfileVendedorWidgetState extends State<ProfileVendedorWidget>
                               decoration: BoxDecoration(
                                 color: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
-                                boxShadow: const [
+                                boxShadow: [
                                   BoxShadow(
                                     blurRadius: 3.0,
                                     color: Color(0x33000000),
@@ -590,7 +596,7 @@ class _ProfileVendedorWidgetState extends State<ProfileVendedorWidget>
                                 ),
                               ),
                               child: Padding(
-                                padding: const EdgeInsets.all(12.0),
+                                padding: EdgeInsets.all(12.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
@@ -601,7 +607,7 @@ class _ProfileVendedorWidgetState extends State<ProfileVendedorWidget>
                                       size: 24.0,
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           12.0, 0.0, 0.0, 0.0),
                                       child: Text(
                                         'Excluir minha conta para sempre',
@@ -616,7 +622,7 @@ class _ProfileVendedorWidgetState extends State<ProfileVendedorWidget>
                                     Expanded(
                                       child: Align(
                                         alignment:
-                                            const AlignmentDirectional(0.9, 0.0),
+                                            AlignmentDirectional(0.9, 0.0),
                                         child: Icon(
                                           Icons.arrow_forward_ios,
                                           color: FlutterFlowTheme.of(context)
@@ -634,10 +640,10 @@ class _ProfileVendedorWidgetState extends State<ProfileVendedorWidget>
                       ],
                     ),
                     Align(
-                      alignment: const AlignmentDirectional(0.0, 0.0),
+                      alignment: AlignmentDirectional(0.0, 0.0),
                       child: Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 22.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 22.0, 0.0, 0.0),
                         child: FFButtonWidget(
                           onPressed: () async {
                             GoRouter.of(context).prepareAuthEvent();
@@ -645,19 +651,19 @@ class _ProfileVendedorWidgetState extends State<ProfileVendedorWidget>
                             GoRouter.of(context).clearRedirectLocation();
 
                             context.goNamedAuth(
-                                'auth_2_Login', context.mounted);
+                                Auth2LoginWidget.routeName, context.mounted);
                           },
                           text: 'Fazer logout',
-                          icon: const Icon(
+                          icon: Icon(
                             Icons.logout_outlined,
                             size: 15.0,
                           ),
                           options: FFButtonOptions(
                             width: 189.0,
                             height: 44.0,
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
-                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                            iconPadding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
                             color: FlutterFlowTheme.of(context)
                                 .secondaryBackground,

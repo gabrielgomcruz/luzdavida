@@ -3,12 +3,16 @@ import '/backend/backend.dart';
 import '/backend/schema/enums/enums.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'eu_sou_model.dart';
 export 'eu_sou_model.dart';
 
 class EuSouWidget extends StatefulWidget {
   const EuSouWidget({super.key});
+
+  static String routeName = 'EuSou';
+  static String routePath = '/euSou';
 
   @override
   State<EuSouWidget> createState() => _EuSouWidgetState();
@@ -51,15 +55,15 @@ class _EuSouWidgetState extends State<EuSouWidget> {
             children: [
               Flexible(
                 child: Align(
-                  alignment: const AlignmentDirectional(0.0, 0.0),
+                  alignment: AlignmentDirectional(0.0, 0.0),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Align(
-                        alignment: const AlignmentDirectional(0.0, 0.0),
+                        alignment: AlignmentDirectional(0.0, 0.0),
                         child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 22.0),
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(0.0),
@@ -73,9 +77,9 @@ class _EuSouWidgetState extends State<EuSouWidget> {
                         ),
                       ),
                       Align(
-                        alignment: const AlignmentDirectional(0.0, 0.0),
+                        alignment: AlignmentDirectional(0.0, 0.0),
                         child: Padding(
-                          padding: const EdgeInsets.all(20.0),
+                          padding: EdgeInsets.all(20.0),
                           child: Material(
                             color: Colors.transparent,
                             elevation: 0.0,
@@ -86,18 +90,18 @@ class _EuSouWidgetState extends State<EuSouWidget> {
                               width: double.infinity,
                               height: 254.0,
                               decoration: BoxDecoration(
-                                color: const Color(0x1C303825),
+                                color: Color(0x1C303825),
                                 borderRadius: BorderRadius.circular(30.0),
                               ),
                               child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     20.0, 0.0, 20.0, 0.0),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 20.0, 0.0, 20.0),
                                       child: Text(
                                         'Qual seu interesse?',
@@ -120,7 +124,7 @@ class _EuSouWidgetState extends State<EuSouWidget> {
                                         Expanded(
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 5.0, 0.0),
                                             child: InkWell(
                                               splashColor: Colors.transparent,
@@ -135,7 +139,9 @@ class _EuSouWidgetState extends State<EuSouWidget> {
                                                   euSou: EuSou.Cliente,
                                                 ));
 
-                                                context.goNamed('homeCliente');
+                                                context.goNamed(
+                                                    HomeClienteWidget
+                                                        .routeName);
                                               },
                                               child: Material(
                                                 color: Colors.transparent,
@@ -152,7 +158,7 @@ class _EuSouWidgetState extends State<EuSouWidget> {
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .secondaryBackground,
-                                                    boxShadow: const [
+                                                    boxShadow: [
                                                       BoxShadow(
                                                         blurRadius: 4.0,
                                                         color:
@@ -177,7 +183,7 @@ class _EuSouWidgetState extends State<EuSouWidget> {
                                                       Expanded(
                                                         child: Align(
                                                           alignment:
-                                                              const AlignmentDirectional(
+                                                              AlignmentDirectional(
                                                                   0.0, 0.0),
                                                           child: ClipRRect(
                                                             borderRadius:
@@ -196,7 +202,7 @@ class _EuSouWidgetState extends State<EuSouWidget> {
                                                       ),
                                                       Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     0.0,
@@ -232,7 +238,7 @@ class _EuSouWidgetState extends State<EuSouWidget> {
                                         Expanded(
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     5.0, 0.0, 0.0, 0.0),
                                             child: InkWell(
                                               splashColor: Colors.transparent,
@@ -248,7 +254,8 @@ class _EuSouWidgetState extends State<EuSouWidget> {
                                                 ));
 
                                                 context.goNamed(
-                                                    'auth_2_EditProfile');
+                                                    Auth2EditProfileWidget
+                                                        .routeName);
                                               },
                                               child: Material(
                                                 color: Colors.transparent,
@@ -265,7 +272,7 @@ class _EuSouWidgetState extends State<EuSouWidget> {
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .secondaryBackground,
-                                                    boxShadow: const [
+                                                    boxShadow: [
                                                       BoxShadow(
                                                         blurRadius: 4.0,
                                                         color:
@@ -290,7 +297,7 @@ class _EuSouWidgetState extends State<EuSouWidget> {
                                                       Expanded(
                                                         child: Align(
                                                           alignment:
-                                                              const AlignmentDirectional(
+                                                              AlignmentDirectional(
                                                                   0.0, 0.0),
                                                           child: ClipRRect(
                                                             borderRadius:
@@ -307,7 +314,7 @@ class _EuSouWidgetState extends State<EuSouWidget> {
                                                       ),
                                                       Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     0.0,
